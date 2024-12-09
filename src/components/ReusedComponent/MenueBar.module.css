@@ -1,0 +1,42 @@
+.menueBarContainer {
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.menueLogo {
+  display: flex;
+  justify-content: center;
+  margin: 4rem auto;
+  /* padding: 3rem auto; */
+
+  justify-self: center;
+}
+
+.menueBarImg {
+  width: 80px;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  list-style: none;
+}
+
+.menueBarItem {
+  padding: 10px;
+  height: 20px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menueBarItemImg {
+  margin: 0 2rem;
+}

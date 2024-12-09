@@ -1,0 +1,8 @@
+.stockAndInventoryContainer {
+  display: flex;
+}
+.mainStockInventory {
+  width: 80%;
+  background-color: #f8f9fd;
+  padding: 1rem;
+}

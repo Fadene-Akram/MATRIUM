@@ -1,0 +1,29 @@
+.updateStockContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8%;
+  width: 92%;
+  padding: 1rem;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: gray 0.2px 0px 2px 0px;
+}
+.updateStockContainer p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 5%;
+}
+
+.updateStockContainer button {
+  width: 20%;
+  height: 2.2rem;
+  border-radius: 7px;
+  border: none;
+  box-shadow: gray 0.2px 0px 2px 0px;
+  margin-right: 5%;
+  background-color: rgb(0, 123, 160);
+  color: rgb(219, 219, 219);
+  font-size: 16px;
+}

@@ -1,0 +1,10 @@
+.statisticCardsContainer {
+  width: 98%;
+  margin: 1rem auto;
+  /* background-color: antiquewhite; */
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+  align-items: center;
+}

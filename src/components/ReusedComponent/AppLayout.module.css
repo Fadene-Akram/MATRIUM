@@ -1,0 +1,4 @@
+.appLayoutContainer {
+  display: flex;
+  height: fit-content;
+}

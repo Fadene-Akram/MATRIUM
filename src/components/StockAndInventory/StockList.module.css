@@ -1,0 +1,50 @@
+.stockListContainer {
+  width: 95%;
+  height: fit-content;
+  margin: 1rem auto 1rem auto;
+  padding: 1rem 1rem 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: gray 0.2px 0px 2px 0px;
+}
+
+.title {
+  font-size: 18px;
+  text-align: start;
+  margin-bottom: 0.5rem;
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: repeat(11, 1.2fr);
+  text-align: left;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 14px;
+  column-gap: 0;
+}
+
+.column {
+  padding: 7px;
+  white-space: nowrap;
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.paginationBtn {
+  /* background: linear-gradient(to bottom right, #14add6, #384295); */
+  background-color: #f8f9fd;
+  color: black;
+  box-shadow: gray 0.2px 0px 2px 0px;
+
+  padding: 5px;
+  border-radius: 5px;
+  margin: 4px 10px;
+  width: 3.5rem;
+  border: none;
+  cursor: pointer;
+}

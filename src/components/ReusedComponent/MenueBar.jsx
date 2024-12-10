@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styles from "./MenueBar.module.css";
 
 function MenueBar() {
@@ -19,6 +20,7 @@ function MenueBar() {
           />
           <p>Dashboard</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/staff_icon.svg"
@@ -27,6 +29,7 @@ function MenueBar() {
           />
           <p>Staff</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/payment_voucher.svg"
@@ -35,6 +38,7 @@ function MenueBar() {
           />
           <p>Payment Voucher</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/payroll_icon.svg"
@@ -43,6 +47,7 @@ function MenueBar() {
           />
           <p>Payroll</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/memo_icon.svg"
@@ -51,6 +56,7 @@ function MenueBar() {
           />
           <p>Memo</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/circulars_icon.svg"
@@ -59,6 +65,7 @@ function MenueBar() {
           />
           <p>Circulars</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/logistic_icon.svg"
@@ -67,6 +74,7 @@ function MenueBar() {
           />
           <p>Logistic</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/office_budget_icon.svg"
@@ -75,14 +83,20 @@ function MenueBar() {
           />
           <p>Office Budget</p>
         </li>
-        <li className={styles.menueBarItem}>
-          <img
-            src="src/assets/icons/stock_and_enventory_icon.svg"
-            alt="MenueBar item 9"
-            className={styles.menueBarItemImg}
-          />
-          <p>Stocks and Inventory</p>
-        </li>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+        >
+          <li className={styles.menueBarItem}>
+            <img
+              src="src/assets/icons/stock_and_enventory_icon.svg"
+              alt="MenueBar item 9"
+              className={styles.menueBarItemImg}
+            />
+            <p>Stocks and Inventory</p>
+          </li>
+        </NavLink>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/notifcations_icon.svg"
@@ -91,6 +105,7 @@ function MenueBar() {
           />
           <p>Notifications</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/capacity_building_icon.svg"
@@ -99,6 +114,7 @@ function MenueBar() {
           />
           <p>Capacity Building</p>
         </li>
+
         <li className={styles.menueBarItem}>
           <img
             src="src/assets/icons/procurements_icon.svg"

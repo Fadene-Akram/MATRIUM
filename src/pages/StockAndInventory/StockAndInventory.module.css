@@ -1,8 +1,13 @@
-.stockAndInventoryContainer {
-  display: flex;
-}
 .mainStockInventory {
   width: 80%;
+  display: flex;
+  flex-direction: column;
   background-color: #f8f9fd;
   padding: 1rem;
+}
+
+.footer {
+  padding: 1rem 0 0 0;
+  text-align: center;
+  background-color: #f8f9fd;
 }

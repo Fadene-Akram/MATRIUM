@@ -10,10 +10,11 @@ function StockRow({ rowInformation }) {
     qtyPurchased,
     unitPrice,
     totalAmount,
-    inStock,
     supplier,
     status,
   } = rowInformation;
+
+  const formattedStatus = status.toLowerCase().replace(/\s+/g, ""); // Remove all spaces
 
   return (
     <div className={styles.rowTableContainer}>
@@ -27,12 +28,9 @@ function StockRow({ rowInformation }) {
       <div className={styles.column}>{qtyPurchased}</div>
       <div className={styles.column}>{unitPrice}</div>
       <div className={styles.column}>{totalAmount}</div>
-      <div className={styles.column}>{inStock}</div>
       <div className={styles.column}>{supplier}</div>
       <div
-        className={`${styles.column} ${
-          styles[status.toLowerCase().replace(" ", "").replace(" ", "")]
-        }}`}
+        className={`${styles.column} ${styles[formattedStatus]}`} // Use formattedStatus here
       >
         {status}
       </div>

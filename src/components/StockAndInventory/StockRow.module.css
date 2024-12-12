@@ -1,6 +1,6 @@
 .rowTableContainer {
   display: grid;
-  grid-template-columns: repeat(11, 1.2fr);
+  grid-template-columns: repeat(10, 1.5fr);
   row-gap: 10px;
   column-gap: 10px;
   text-align: left;

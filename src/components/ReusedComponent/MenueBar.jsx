@@ -85,6 +85,7 @@ function MenueBar() {
         </li>
         <NavLink
           to={"/"}
+          style={{ textDecoration: "none", color: "black", width: "100%" }}
           className={({ isActive }) => (isActive ? "activeLink" : "")}
         >
           <li className={styles.menueBarItem}>

@@ -14,9 +14,7 @@ function StockList() {
   useEffect(() => {
     const fetchStockData = async () => {
       try {
-        const response = await import(
-          "../../data/Dummy_Product.json"
-        );
+        const response = await import("../../data/Dummy_Product.json");
         setStockData(response.default);
         setIsLoading(false);
       } catch (err) {
@@ -70,7 +68,7 @@ function StockList() {
           <div className={styles.column}>Qty Purchased</div>
           <div className={styles.column}>Unit Price</div>
           <div className={styles.column}>Total Amount</div>
-          <div className={styles.column}>In Stock</div>
+          {/* <div className={styles.column}>In Stock</div> */}
           <div className={styles.column}>Supplier</div>
           <div className={styles.column}>Status</div>
         </div>

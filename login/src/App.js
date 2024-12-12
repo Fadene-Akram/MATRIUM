@@ -5,7 +5,7 @@ import Signup from './Signup';
 import PasswordRecovery from './PasswordRecovery';
 import VerifyEmail from './VerifyEmail';
 import UpdatePassword from './UpdatePassword';
-import RegisterDevice from './RegisterDevice';
+import RegisterDevice from './registerDevice';
 
 function App() {
   return (

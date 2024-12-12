@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f0f2f5, #c2e9fb);
+}
+
+.signup-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+}
+
+.signup-card, .verification-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  max-width: 100%;
+  padding: 40px;
+}
+
+.form-container {
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.signup-button, .verify-button, .resend-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.signup-button {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+}
+
+.signup-button:hover {
+  background: linear-gradient(90deg, #0056b3, #0096d6);
+}
+
+.verify-button {
+  background: linear-gradient(90deg, #28a745, #85d38c);
+}
+
+.verify-button:hover {
+  background: linear-gradient(90deg, #1e7c31, #6bb978);
+}
+
+.resend-button {
+  background-color: #6c757d;
+}
+
+.resend-button:hover {
+  background-color: #565e64;
+}
+
+.logo {
+  font-size: 100px;
+  color: #007bff;
+  margin-bottom: 20px;
+}

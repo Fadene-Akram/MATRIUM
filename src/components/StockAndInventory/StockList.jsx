@@ -15,7 +15,7 @@ function StockList() {
     const fetchStockData = async () => {
       try {
         const response = await import(
-          "C:\\Users\\denta\\OneDrive\\Bureau\\MATRIUM PROJECT\\MATRIUM\\src\\data\\Dummy_Product.json"
+          "../../data/Dummy_Product.json"
         );
         setStockData(response.default);
         setIsLoading(false);

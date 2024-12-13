@@ -3,6 +3,7 @@ import StatisticCards from "../../components/StockAndInventory/StatisticCards";
 import StockList from "../../components/StockAndInventory/StockList";
 import UpdateStockList from "../../components/StockAndInventory/UpdateStockList";
 import styles from "./StockAndInventory.module.css";
+
 function StockAndInventory() {
   return (
     <div className={styles.mainStockInventory}>

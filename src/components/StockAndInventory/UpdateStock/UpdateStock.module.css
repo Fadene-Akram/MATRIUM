@@ -1,6 +1,5 @@
-/* 
-body{
-  background-color: #F8F9FD;
+/* body {
+  background-color: #f8f9fd;
 } */
 
 .mainContainer {
@@ -10,7 +9,7 @@ body{
 
 .update-stock-container {
   width: 70%;
-  height: 80vh;
+  height: 70vh;
   margin: 20px auto;
   padding: 20px;
   background-color: #ffffff;

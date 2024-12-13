@@ -1,20 +1,34 @@
-import React from 'react';
-import './ReceiptPage.css';
+import "./ReceiptPage.css";
 
 const ReceiptPage = () => {
   const receiptDetails = {
-    number: '#12345',
-    date: '12-Dec-2024',
-    supplier: 'ABC Supplies Co.',
-    status: 'Pending',
+    number: "#12345",
+    date: "12-Dec-2024",
+    supplier: "ABC Supplies Co.",
+    status: "Pending",
   };
 
   const items = [
-    { id: 1, name: 'Widget A', description: 'Example Widget', quantity: 10, unitPrice: 5 },
-    { id: 2, name: 'Gadget B', description: 'Example Gadget', quantity: 5, unitPrice: 20 },
+    {
+      id: 1,
+      name: "Widget A",
+      description: "Example Widget",
+      quantity: 10,
+      unitPrice: 5,
+    },
+    {
+      id: 2,
+      name: "Gadget B",
+      description: "Example Gadget",
+      quantity: 5,
+      unitPrice: 20,
+    },
   ];
 
-  const totalPrice = items.reduce((sum, item) => sum + item.quantity * item.unitPrice, 0);
+  const totalPrice = items.reduce(
+    (sum, item) => sum + item.quantity * item.unitPrice,
+    0
+  );
 
   return (
     <div className="receipt-page">
@@ -23,10 +37,18 @@ const ReceiptPage = () => {
       </header>
       <div className="receipt-summary">
         <h2>Summary</h2>
-        <p><strong>Receipt Number:</strong> {receiptDetails.number}</p>
-        <p><strong>Date:</strong> {receiptDetails.date}</p>
-        <p><strong>Supplier:</strong> {receiptDetails.supplier}</p>
-        <p><strong>Status:</strong> {receiptDetails.status}</p>
+        <p>
+          <strong>Receipt Number:</strong> {receiptDetails.number}
+        </p>
+        <p>
+          <strong>Date:</strong> {receiptDetails.date}
+        </p>
+        <p>
+          <strong>Supplier:</strong> {receiptDetails.supplier}
+        </p>
+        <p>
+          <strong>Status:</strong> {receiptDetails.status}
+        </p>
       </div>
       <div className="receipt-items">
         <h2>Items</h2>

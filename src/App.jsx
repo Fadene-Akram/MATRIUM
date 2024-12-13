@@ -23,18 +23,27 @@ import "./App.css";
 import StockAndInventory from "./pages/StockAndInventory/StockAndInventory";
 import UpdateStock from "./components/StockAndInventory/UpdateStock/UpdateStock.jsx"; // Import UpdateStock page
 import AppLayout from "./components/ReusedComponent/AppLayout";
+// Import the AppLogin component
+import React from 'react';
+
+import Login from './components/login/Login';
+import RegisterDevice from './components/login/RegisterDevice';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Route for authentication pages */}
+   
+        {/* Main app layout and routes */}
         <Route element={<AppLayout />}>
           <Route index element={<StockAndInventory />} />
-          <Route path="update-stock" element={<UpdateStock />} /> {/* New route */}
-        </Route>
+          <Route path="update-stock" element={<UpdateStock />} />
+        </Route> 
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+

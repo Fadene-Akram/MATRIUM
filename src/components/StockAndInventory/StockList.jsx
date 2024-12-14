@@ -210,16 +210,12 @@ export default StockList;
 
 // // Function to fetch the stock data from the backend
 // const fetchStockData = async () => {
-//   const response = await fetch(
-//     "http://matrium.rf.gd/matrium/api/product/getProduct.php"
-//   );
+//   const response = await fetch("/api/algeriepost/api/product/hello.php");
 
-//   // Check if the response is successful (status code 200-299)
 //   if (!response.ok) {
 //     throw new Error("Failed to fetch stock data: " + response.statusText);
 //   }
 
-//   // Check if the response is JSON
 //   const contentType = response.headers.get("content-type");
 //   if (contentType && contentType.includes("application/json")) {
 //     return response.json();
@@ -229,7 +225,7 @@ export default StockList;
 // };
 
 // function StockList() {
-//   // Fetching stock data with React Query using the object-based format
+//   // Fetching stock data with React Query
 //   const {
 //     data: stockData,
 //     isLoading,

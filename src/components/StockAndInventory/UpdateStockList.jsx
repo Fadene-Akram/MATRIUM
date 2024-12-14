@@ -11,7 +11,6 @@ function UpdateStockList() {
 
 export default UpdateStockList;
  */
-import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import styles from "./UpdateStockList.module.css";
 

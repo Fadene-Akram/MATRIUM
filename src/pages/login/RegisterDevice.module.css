@@ -1,0 +1,129 @@
+/* Page Wrapper */
+/* .page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+} */
+
+.register-device-container {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.register-device-card {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.h2 {
+  font-size: 24px;
+  color: #007bff; /* Blue color */
+  margin-bottom: 20px;
+}
+
+.p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Input Field Styling */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #666;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Status Message */
+.status-message {
+  font-size: 14px;
+  color: #d9534f; /* Red color for error */
+  margin-top: 10px;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745; /* Green for success */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  display: none;
+  z-index: 1000;
+}
+
+.notification.success {
+  background-color: #28a745;
+}
+
+.notification.show {
+  display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .register-device-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .h2 {
+    font-size: 20px;
+  }
+}

@@ -83,8 +83,9 @@ function MenueBar() {
           />
           <p>Office Budget</p>
         </li>
+
         <NavLink
-          to={"/"}
+          to={"/stock"}
           style={{ textDecoration: "none", color: "black", width: "100%" }}
           className={({ isActive }) => (isActive ? "activeLink" : "")}
         >
@@ -116,14 +117,20 @@ function MenueBar() {
           <p>Capacity Building</p>
         </li>
 
-        <li className={styles.menueBarItem}>
-          <img
-            src="src/assets/icons/procurements_icon.svg"
-            alt="MenueBar item 12"
-            className={styles.menueBarItemImg}
-          />
-          <p>Procurements</p>
-        </li>
+        <NavLink
+          to="/purchase-orders-list" // This is the route for Procurements
+          style={{ textDecoration: "none", color: "black", width: "100%" }}
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+        >
+          <li className={styles.menueBarItem}>
+            <img
+              src="src/assets/icons/procurements_icon.svg"
+              alt="MenueBar item 12"
+              className={styles.menueBarItemImg}
+            />
+            <p>Purchase Orders List</p>
+          </li>
+        </NavLink>
       </ul>
     </div>
   );

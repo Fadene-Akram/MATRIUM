@@ -96,7 +96,7 @@ const PurchaseOrder = () => {
     };
 
     setOrders([...orders, newOrder]);
-    navigate("/");
+    navigate("/purchase-orders-list");
   };
 
   return (

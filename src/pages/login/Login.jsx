@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -45,14 +45,18 @@ const Button = styled.button`
   margin-top: 15px;
   color: white;
 
-  ${(props) => props.primary && `
+  ${(props) =>
+    props.primary &&
+    `
     background-color: #4CAF50;
     &:hover {
       background-color: #45a049;
     }
   `}
 
-  ${(props) => props.secondary && `
+  ${(props) =>
+    props.secondary &&
+    `
     background-color: #2196F3;
     &:hover {
       background-color: #1e88e5;
@@ -73,7 +77,7 @@ const RegisterDevice = () => {
   const navigate = useNavigate();
 
   const MY_DEVICE_FINGERPRINT =
-    "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMS4wLjAuMCBTYWZhcmkvNTM3LjM2IEVkZy8xMzEuMC4wLjB8ZnJ8MTM2Nnw3Njh8LTYw";
+    "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMS4wLjAuMCBTYWZhcmkvNTM3LjM2fGVufDE1MzZ8ODY0fC02MA==";
 
   const generateFingerprint = () => {
     const properties = [

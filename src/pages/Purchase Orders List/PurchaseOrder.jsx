@@ -1,20 +1,31 @@
-import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { OrdersContext } from '../../context/OrdersContext';
-import './PurchaseOrder.module.css';
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { OrdersContext } from "../../context/OrdersContext";
+import "./PurchaseOrder.css";
+import PageHead from "../../components/ReusedComponent/PageHead";
 
 const PurchaseOrder = () => {
   const [items, setItems] = useState([
-    { item: '', quantity: 1, uom: 'pcs', price: 0, tax: 0, expectedArrival: '' }
+    {
+      item: "",
+      quantity: 1,
+      uom: "pcs",
+      price: 0,
+      tax: 0,
+      expectedArrival: "",
+    },
   ]);
-  const [supplier, setSupplier] = useState('');
-  const [orderNumber, setOrderNumber] = useState('');
-  const [expectedArrival, setExpectedArrival] = useState('');
-  const [createdDate, setCreatedDate] = useState(new Date().toISOString().split('T')[0]);
-  const [shipTo, setShipTo] = useState('');
+  const [supplier, setSupplier] = useState("");
+  const [orderNumber, setOrderNumber] = useState("");
+  const [expectedArrival, setExpectedArrival] = useState("");
+  const [createdDate, setCreatedDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
+  const [shipTo, setShipTo] = useState("");
   const [additionalExpenses, setAdditionalExpenses] = useState(0);
-  const [additionalInfo, setAdditionalInfo] = useState('');
-  const [error, setError] = useState('');
+  const [additionalInfo, setAdditionalInfo] = useState("");
+  const [error, setError] = useState("");
+
   const navigate = useNavigate();
   const { orders, setOrders } = useContext(OrdersContext);
 
@@ -27,7 +38,14 @@ const PurchaseOrder = () => {
   const addItem = () => {
     setItems([
       ...items,
-      { item: '', quantity: 1, uom: 'pcs', price: 0, tax: 0, expectedArrival: '' }
+      {
+        item: "",
+        quantity: 1,
+        uom: "pcs",
+        price: 0,
+        tax: 0,
+        expectedArrival: "",
+      },
     ]);
   };
 
@@ -37,14 +55,26 @@ const PurchaseOrder = () => {
   };
 
   const totalUnits = items.reduce((sum, item) => sum + item.quantity, 0);
-  const subtotal = items.reduce((sum, item) => sum + item.quantity * item.price, 0);
-  const totalTax = items.reduce((sum, item) => sum + (item.quantity * item.price * item.tax) / 100, 0);
+  const subtotal = items.reduce(
+    (sum, item) => sum + item.quantity * item.price,
+    0
+  );
+  const totalTax = items.reduce(
+    (sum, item) => sum + (item.quantity * item.price * item.tax) / 100,
+    0
+  );
   const total = subtotal + totalTax + parseFloat(additionalExpenses);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!supplier || !orderNumber || !expectedArrival || !shipTo || items.some(item => !item.item)) {
-      setError('Please fill out all required fields.');
+    if (
+      !supplier ||
+      !orderNumber ||
+      !expectedArrival ||
+      !shipTo ||
+      items.some((item) => !item.item)
+    ) {
+      setError("Please fill out all required fields.");
       return;
     }
 
@@ -61,17 +91,22 @@ const PurchaseOrder = () => {
       subtotal,
       totalTax,
       totalOrderValue: total,
-      status: 'open',
-      delivery: 'not received'
+      status: "open",
+      delivery: "not received",
     };
 
     setOrders([...orders, newOrder]);
-    navigate('/');
+    navigate("/");
   };
 
   return (
     <div className="purchase-order-container">
-      <h1 className="title">Create Purchase Order</h1>
+      <PageHead
+        title="Stocks and Inventories"
+        description="Update stock and inventory table"
+        icon="src/assets/icons/stock_and_enventory_icon.svg"
+      />
+      <h1 className="purchase-order-title">Create Purchase Order</h1>
       {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit} className="purchase-order-form">
         <div className="form-group">
@@ -140,7 +175,9 @@ const PurchaseOrder = () => {
                       type="text"
                       placeholder="Enter item name"
                       value={item.item}
-                      onChange={(e) => handleItemChange(index, 'item', e.target.value)}
+                      onChange={(e) =>
+                        handleItemChange(index, "item", e.target.value)
+                      }
                     />
                   </td>
                   <td>
@@ -148,14 +185,22 @@ const PurchaseOrder = () => {
                       type="number"
                       min="1"
                       value={item.quantity}
-                      onChange={(e) => handleItemChange(index, 'quantity', parseInt(e.target.value))}
+                      onChange={(e) =>
+                        handleItemChange(
+                          index,
+                          "quantity",
+                          parseInt(e.target.value)
+                        )
+                      }
                     />
                   </td>
                   <td>
                     <input
                       type="text"
                       value={item.uom}
-                      onChange={(e) => handleItemChange(index, 'uom', e.target.value)}
+                      onChange={(e) =>
+                        handleItemChange(index, "uom", e.target.value)
+                      }
                     />
                   </td>
                   <td>
@@ -164,7 +209,13 @@ const PurchaseOrder = () => {
                       min="0"
                       step="0.01"
                       value={item.price}
-                      onChange={(e) => handleItemChange(index, 'price', parseFloat(e.target.value))}
+                      onChange={(e) =>
+                        handleItemChange(
+                          index,
+                          "price",
+                          parseFloat(e.target.value)
+                        )
+                      }
                     />
                   </td>
                   <td>{(item.quantity * item.price).toFixed(2)} DA</td>
@@ -174,14 +225,26 @@ const PurchaseOrder = () => {
                       min="0"
                       step="0.01"
                       value={item.tax}
-                      onChange={(e) => handleItemChange(index, 'tax', parseFloat(e.target.value))}
+                      onChange={(e) =>
+                        handleItemChange(
+                          index,
+                          "tax",
+                          parseFloat(e.target.value)
+                        )
+                      }
                     />
                   </td>
                   <td>
                     <input
                       type="date"
                       value={item.expectedArrival}
-                      onChange={(e) => handleItemChange(index, 'expectedArrival', e.target.value)}
+                      onChange={(e) =>
+                        handleItemChange(
+                          index,
+                          "expectedArrival",
+                          e.target.value
+                        )
+                      }
                     />
                   </td>
                   <td>
@@ -197,7 +260,9 @@ const PurchaseOrder = () => {
               ))}
             </tbody>
           </table>
-          <button type="button" className="add-btn" onClick={addItem}>+ Add Item</button>
+          <button type="button" className="add-btn" onClick={addItem}>
+            + Add Item
+          </button>
         </div>
         <div className="form-group">
           <label>Additional Expenses</label>
@@ -213,7 +278,9 @@ const PurchaseOrder = () => {
           <p>Total Units: {totalUnits} pcs</p>
           <p>Subtotal: {subtotal.toFixed(2)} DA</p>
           <p>Tax: {totalTax.toFixed(2)} DA</p>
-          <p><strong>Total: {total.toFixed(2)} DA</strong></p>
+          <p>
+            <strong>Total: {total.toFixed(2)} DA</strong>
+          </p>
         </div>
         <div className="form-group">
           <label>Additional Information</label>
@@ -223,7 +290,9 @@ const PurchaseOrder = () => {
             placeholder="Add any extra information here"
           />
         </div>
-        <button type="submit" className="submit-btn">Save Order</button>
+        <button type="submit" className="submit-btn">
+          Save Order
+        </button>
       </form>
     </div>
   );

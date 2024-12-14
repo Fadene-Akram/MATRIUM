@@ -1,5 +1,5 @@
 /* Page Wrapper */
-.page-wrapper {
+/* .page-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,11 +7,10 @@
   background-color: #f4f7fc;
   margin: 0;
   padding: 0;
-}
+} */
 
 .register-device-container {
   width: 100%;
-  max-width: 450px;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
@@ -22,6 +21,8 @@
 .register-device-card {
   padding: 20px;
   text-align: center;
+  width: 100%;
+  padding: 1rem;
 }
 
 .h2 {

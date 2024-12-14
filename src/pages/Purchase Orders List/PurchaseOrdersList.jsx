@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { OrdersContext } from '../../context/OrdersContext';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
-import styled from 'styled-components';
-import MenueBar from '../ReusedComponent/MenueBar'; // Importing MenueBar component
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { OrdersContext } from "../../context/OrdersContext";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
+import styled from "styled-components";
+import MenueBar from "../../components/ReusedComponent/MenueBar"; // Importing MenueBar component
+import PageHead from "../../components/ReusedComponent/PageHead";
 
 const Container = styled.div`
   display: flex; /* Flex container to accommodate MenueBar and content side by side */
@@ -12,8 +13,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   padding: 20px;
-  margin: 20px auto;
-  max-width: 1200px;
+
   color: #333;
   background-color: #f8f9fd;
   flex-grow: 1; /* Allow content to take up remaining space */
@@ -67,8 +67,8 @@ const FilterButton = styled.button`
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  background-color: ${props => (props.active ? '#5584ce' : '#eaf2ff')};
-  color: ${props => (props.active ? 'white' : '#5584ce')};
+  background-color: ${(props) => (props.active ? "#5584ce" : "#eaf2ff")};
+  color: ${(props) => (props.active ? "white" : "#5584ce")};
   border: 1px solid #5584ce;
   border-radius: 5px;
 `;
@@ -79,7 +79,8 @@ const OrdersTable = styled.table`
   margin-top: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-  th, td {
+  th,
+  td {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
@@ -102,24 +103,24 @@ const OrdersTable = styled.table`
 const PurchaseOrdersList = () => {
   const { orders, setOrders } = useContext(OrdersContext);
   const [showOpenOrders, setShowOpenOrders] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const addOrder = () => {
-    navigate('/purchase-order');
+    navigate("/purchase-order");
   };
 
   const markAsDone = (orderNumber) => {
-    const updatedOrders = orders.map(order =>
-      order.orderNumber === orderNumber ? { ...order, status: 'done' } : order
+    const updatedOrders = orders.map((order) =>
+      order.orderNumber === orderNumber ? { ...order, status: "done" } : order
     );
     setOrders(updatedOrders);
   };
 
   const exportTable = () => {
     if (!orders.length) {
-      setError('No orders available to export.');
-      setTimeout(() => setError(''), 3000);
+      setError("No orders available to export.");
+      setTimeout(() => setError(""), 3000);
       return;
     }
 
@@ -128,20 +129,20 @@ const PurchaseOrdersList = () => {
 
     // Add title
     doc.setFontSize(16);
-    doc.text('Purchase Orders Report', 14, 15);
+    doc.text("Purchase Orders Report", 14, 15);
 
     // Define table columns
     const columns = [
-      'Created Date',
-      'Order Number',
-      'Supplier',
-      'Total Order Value (DA)',
-      'Expected Arrival',
-      'Delivery Status',
+      "Created Date",
+      "Order Number",
+      "Supplier",
+      "Total Order Value (DA)",
+      "Expected Arrival",
+      "Delivery Status",
     ];
 
     // Define table rows based on filtered orders
-    const rows = (showOpenOrders ? openOrders : doneOrders).map(order => [
+    const rows = (showOpenOrders ? openOrders : doneOrders).map((order) => [
       order.createdDate,
       order.orderNumber,
       order.supplier,
@@ -158,34 +159,56 @@ const PurchaseOrdersList = () => {
     });
 
     // Save the PDF
-    doc.save('purchase_orders_report.pdf');
+    doc.save("purchase_orders_report.pdf");
   };
 
   const totalOrders = orders.length;
-  const totalCost = orders.reduce((sum, order) => sum + (order.totalOrderValue || 0), 0);
+  const totalCost = orders.reduce(
+    (sum, order) => sum + (order.totalOrderValue || 0),
+    0
+  );
 
-  const openOrders = orders.filter(order => order.status !== 'done');
-  const doneOrders = orders.filter(order => order.status === 'done');
+  const openOrders = orders.filter((order) => order.status !== "done");
+  const doneOrders = orders.filter((order) => order.status === "done");
 
   return (
     <Container>
       <MenueBar /> {/* Adding MenueBar to the layout */}
       <Content>
+        <PageHead
+          title="Purchase Orders List"
+          description="Create and add purshase order"
+          icon="src/assets/icons/stock_and_enventory_icon.svg"
+        />
         <Header>Purchase Orders List</Header>
 
         {error && <Error>{error}</Error>}
 
         <ButtonsContainer>
-          <Button className="add" onClick={addOrder}>Add Order</Button>
-          <Button className="export" onClick={exportTable}>Export Table</Button>
+          <Button className="add" onClick={addOrder}>
+            Add Order
+          </Button>
+          <Button className="export" onClick={exportTable}>
+            Export Table
+          </Button>
         </ButtonsContainer>
 
         <p>Total Orders: {totalOrders}</p>
         <p>Total Costs: {totalCost.toFixed(2)} DA</p>
 
         <FilterButtons>
-          <FilterButton active={showOpenOrders} onClick={() => setShowOpenOrders(true)}>Open Orders</FilterButton>
-          <FilterButton active={!showOpenOrders} onClick={() => setShowOpenOrders(false)}>Done Orders</FilterButton>
+          <FilterButton
+            active={showOpenOrders}
+            onClick={() => setShowOpenOrders(true)}
+          >
+            Open Orders
+          </FilterButton>
+          <FilterButton
+            active={!showOpenOrders}
+            onClick={() => setShowOpenOrders(false)}
+          >
+            Done Orders
+          </FilterButton>
         </FilterButtons>
 
         <OrdersTable>
@@ -212,11 +235,13 @@ const PurchaseOrdersList = () => {
                     value={order.delivery}
                     onChange={(e) => {
                       const newDeliveryStatus = e.target.value;
-                      const updatedOrders = orders.map(o =>
-                        o.orderNumber === order.orderNumber ? { ...o, delivery: newDeliveryStatus } : o
+                      const updatedOrders = orders.map((o) =>
+                        o.orderNumber === order.orderNumber
+                          ? { ...o, delivery: newDeliveryStatus }
+                          : o
                       );
                       setOrders(updatedOrders);
-                      if (newDeliveryStatus === 'received all') {
+                      if (newDeliveryStatus === "received all") {
                         markAsDone(order.orderNumber);
                       }
                     }}

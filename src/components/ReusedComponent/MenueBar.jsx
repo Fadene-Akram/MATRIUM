@@ -85,7 +85,7 @@ function MenueBar() {
         </li>
 
         <NavLink
-          to={"/"}
+          to={"/stock"}
           style={{ textDecoration: "none", color: "black", width: "100%" }}
           className={({ isActive }) => (isActive ? "activeLink" : "")}
         >
@@ -128,7 +128,7 @@ function MenueBar() {
               alt="MenueBar item 12"
               className={styles.menueBarItemImg}
             />
-            <p>Procurements</p>
+            <p>Purchase Orders List</p>
           </li>
         </NavLink>
       </ul>

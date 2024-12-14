@@ -1,4 +1,4 @@
-import "./ReceiptPage.css";
+import "./ReceiptPage.module.css";
 
 const ReceiptPage = () => {
   const receiptDetails = {

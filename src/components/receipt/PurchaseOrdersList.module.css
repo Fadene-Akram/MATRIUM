@@ -1,0 +1,71 @@
+.container {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    max-width: 1200px;
+    color: #333;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .buttons-container {
+    margin-bottom: 15px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-button {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .export-button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .filter-button {
+    background-color: #e9ecef;
+    color: #0056b3;
+    border: 1px solid #0056b3;
+  }
+  
+  .active-filter {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-table th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .orders-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  

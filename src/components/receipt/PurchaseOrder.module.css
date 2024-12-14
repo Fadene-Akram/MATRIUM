@@ -1,40 +1,38 @@
 /* General Reset */
-
-/* Body Styling */
-/* body {
+body {
   font-family: "Roboto", Arial, sans-serif;
   background-color: #f7f9fc;
   color: #333;
   line-height: 1.6;
-} */
+}
 
 /* Container */
-/* .container {
+.purchase-order-container {
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-} */
+}
 
 /* Page Header */
-/* h1 {
+.title {
   font-size: 2rem;
   color: #0056b3;
   text-align: center;
   margin-bottom: 20px;
-} */
+}
 
 /* Form Styling */
-/* form {
+.purchase-order-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-} */
+}
 
 /* Form Fields */
-/* form div {
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -63,10 +61,10 @@ select:focus {
   outline: none;
   background-color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
-} */
+}
 
 /* Button Styling */
-/* button {
+button {
   padding: 12px 20px;
   font-size: 16px;
   color: #fff;
@@ -84,38 +82,38 @@ button:hover {
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-} */
+}
 
 /* Table Styling */
-/* table {
+.items-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-th,
-td {
+.items-table th,
+.items-table td {
   padding: 15px;
   text-align: center;
   border: 1px solid #ddd;
 }
 
-th {
+.items-table th {
   background-color: #0056b3;
   color: #fff;
   font-size: 16px;
 }
 
-tr:nth-child(even) {
+.items-table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-tr:hover {
+.items-table tr:hover {
   background-color: #e9ecef;
-} */
+}
 
 /* Totals Section */
-/* .total-summary {
+.summary {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -125,24 +123,24 @@ tr:hover {
   background-color: #f8f9fa;
 }
 
-.total-summary p {
+.summary p {
   font-weight: bold;
   font-size: 18px;
   margin: 0;
-} */
+}
 
 /* Additional Info Section */
-/* textarea {
+textarea {
   height: 120px;
-} */
+}
 
 /* Mobile Responsive */
-/* @media (max-width: 768px) {
-  .container {
+@media (max-width: 768px) {
+  .purchase-order-container {
     padding: 15px;
   }
 
-  h1 {
+  .title {
     font-size: 1.8rem;
   }
 
@@ -150,8 +148,8 @@ tr:hover {
     font-size: 14px;
   }
 
-  table th,
-  table td {
+  .items-table th,
+  .items-table td {
     font-size: 14px;
   }
-} */
+}

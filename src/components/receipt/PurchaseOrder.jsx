@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { OrdersContext } from "../../context/OrdersContext";
-import "./PurchaseOrder.css";
+import "./PurchaseOrder.module.css";
 
 const PurchaseOrder = () => {
   const [items, setItems] = useState([
@@ -103,69 +103,75 @@ const PurchaseOrder = () => {
       {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit} className="purchase-order-form">
         <div className="form-group">
-          <label>Supplier *</label>
+          <label className="form-label">Supplier *</label>
           <input
             type="text"
+            className="form-input"
             placeholder="Select or create supplier"
             value={supplier}
             onChange={(e) => setSupplier(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label>Order Number *</label>
+          <label className="form-label">Order Number *</label>
           <input
             type="text"
+            className="form-input"
             placeholder="Enter order number"
             value={orderNumber}
             onChange={(e) => setOrderNumber(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label>Expected Arrival *</label>
+          <label className="form-label">Expected Arrival *</label>
           <input
             type="date"
+            className="form-input"
             value={expectedArrival}
             onChange={(e) => setExpectedArrival(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label>Created Date</label>
+          <label className="form-label">Created Date</label>
           <input
             type="date"
+            className="form-input"
             value={createdDate}
             onChange={(e) => setCreatedDate(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label>Ship To *</label>
+          <label className="form-label">Ship To *</label>
           <input
             type="text"
+            className="form-input"
             placeholder="Enter shipping location"
             value={shipTo}
             onChange={(e) => setShipTo(e.target.value)}
           />
         </div>
         <div className="items-section">
-          <label>Items *</label>
+          <label className="section-label">Items *</label>
           <table className="items-table">
             <thead>
               <tr>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>UoM</th>
-                <th>Price (DA)</th>
-                <th>Total (DA)</th>
-                <th>Tax (%)</th>
-                <th>Expected Arrival</th>
-                <th>Action</th>
+                <th className="table-header">Item</th>
+                <th className="table-header">Quantity</th>
+                <th className="table-header">UoM</th>
+                <th className="table-header">Price (DA)</th>
+                <th className="table-header">Total (DA)</th>
+                <th className="table-header">Tax (%)</th>
+                <th className="table-header">Expected Arrival</th>
+                <th className="table-header">Action</th>
               </tr>
             </thead>
             <tbody>
               {items.map((item, index) => (
-                <tr key={index}>
+                <tr key={index} className="table-row">
                   <td>
                     <input
                       type="text"
+                      className="table-input"
                       placeholder="Enter item name"
                       value={item.item}
                       onChange={(e) =>
@@ -177,6 +183,7 @@ const PurchaseOrder = () => {
                     <input
                       type="number"
                       min="1"
+                      className="table-input"
                       value={item.quantity}
                       onChange={(e) =>
                         handleItemChange(
@@ -190,6 +197,7 @@ const PurchaseOrder = () => {
                   <td>
                     <input
                       type="text"
+                      className="table-input"
                       value={item.uom}
                       onChange={(e) =>
                         handleItemChange(index, "uom", e.target.value)
@@ -201,6 +209,7 @@ const PurchaseOrder = () => {
                       type="number"
                       min="0"
                       step="0.01"
+                      className="table-input"
                       value={item.price}
                       onChange={(e) =>
                         handleItemChange(
@@ -217,6 +226,7 @@ const PurchaseOrder = () => {
                       type="number"
                       min="0"
                       step="0.01"
+                      className="table-input"
                       value={item.tax}
                       onChange={(e) =>
                         handleItemChange(
@@ -230,6 +240,7 @@ const PurchaseOrder = () => {
                   <td>
                     <input
                       type="date"
+                      className="table-input"
                       value={item.expectedArrival}
                       onChange={(e) =>
                         handleItemChange(
@@ -258,26 +269,28 @@ const PurchaseOrder = () => {
           </button>
         </div>
         <div className="form-group">
-          <label>Additional Expenses</label>
+          <label className="form-label">Additional Expenses</label>
           <input
             type="number"
             min="0"
             step="0.01"
+            className="form-input"
             value={additionalExpenses}
             onChange={(e) => setAdditionalExpenses(parseFloat(e.target.value))}
           />
         </div>
         <div className="summary">
-          <p>Total Units: {totalUnits} pcs</p>
-          <p>Subtotal: {subtotal.toFixed(2)} DA</p>
-          <p>Tax: {totalTax.toFixed(2)} DA</p>
-          <p>
+          <p className="summary-text">Total Units: {totalUnits} pcs</p>
+          <p className="summary-text">Subtotal: {subtotal.toFixed(2)} DA</p>
+          <p className="summary-text">Tax: {totalTax.toFixed(2)} DA</p>
+          <p className="summary-text">
             <strong>Total: {total.toFixed(2)} DA</strong>
           </p>
         </div>
         <div className="form-group">
-          <label>Additional Information</label>
+          <label className="form-label">Additional Information</label>
           <textarea
+            className="form-textarea"
             value={additionalInfo}
             onChange={(e) => setAdditionalInfo(e.target.value)}
             placeholder="Add any extra information here"

@@ -7,20 +7,22 @@ import Login from "./components/login/Login";
 import RegisterDevice from "./components/login/RegisterDevice";
 import PurchaseOrder from "./components/receipt/PurchaseOrder";
 import PurchaseOrdersList from "./components/receipt/PurchaseOrdersList";
-
+import { OrdersProvider } from '../src/context/OrdersContext';
 function App() {
   return (
     <BrowserRouter>
+      <OrdersProvider>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/register-device" element={<RegisterDevice />} />
-        <Route path="/purshased-order-list" element={<PurchaseOrdersList />} />
+        <Route path="/purchase-orders-list" element={<PurchaseOrdersList />} />
         <Route path="/purchase-order" element={<PurchaseOrder />} />
         <Route element={<AppLayout />}>
-          <Route index element={<StockAndInventory />} />
+          <Route path="/stock" element={<StockAndInventory />} />
           <Route path="/update-stock" element={<UpdateStock />} />
         </Route>
       </Routes>
+      </OrdersProvider>
     </BrowserRouter>
   );
 }

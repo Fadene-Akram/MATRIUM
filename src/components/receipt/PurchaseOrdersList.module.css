@@ -1,71 +1,94 @@
+/* PurchaseOrdersList.module.css */
 .container {
-    font-family: Arial, sans-serif;
-    margin: 20px auto;
-    max-width: 1200px;
-    color: #333;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #0056b3;
-  }
-  
-  .error {
-    color: red;
-    text-align: center;
-    margin: 10px 0;
-  }
-  
-  .buttons-container {
-    margin-bottom: 15px;
-  }
-  
-  .button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .add-button {
-    background-color: #0056b3;
-    color: #fff;
-  }
-  
-  .export-button {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .filter-button {
-    background-color: #e9ecef;
-    color: #0056b3;
-    border: 1px solid #0056b3;
-  }
-  
-  .active-filter {
-    background-color: #0056b3;
-    color: #fff;
-  }
-  
-  .orders-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .orders-table th {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .orders-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  max-width: 1200px;
+  color: #333;
+}
+
+.header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0056b3;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addButton {
+  background-color: #0056b3;
+  color: white;
+}
+
+.exportButton {
+  background-color: #007bff;
+  color: white;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filterButton {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #e9ecef;
+  color: #0056b3;
+  border: 1px solid #0056b3;
+  border-radius: 5px;
+}
+
+.activeFilter {
+  background-color: #007bff;
+  color: white;
+}
+
+.ordersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ordersTable th,
+.ordersTable td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.ordersTable th {
+  background-color: #007bff;
+  color: white;
+}
+
+.ordersTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ordersTable tr:hover {
+  background-color: #ddd;
+}

@@ -1,19 +1,15 @@
-.page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f0f2f5, #c2e9fb);
+body {
   margin: 0;
-  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f0f2f5, #c2e9fb);
 }
 
 .login-container {
   display: flex;
-  height: 100%;
-  width: 80%;
+  height: 100vh;
   justify-content: center;
   align-items: center;
+ 
 }
 
 .login-card {
@@ -25,15 +21,13 @@
   max-width: 100%;
   overflow: hidden;
 }
-
 .error-message {
   color: red;
   font-size: 12px;
   margin-top: 5px;
 }
 
-.left-section,
-.right-section {
+.left-section, .right-section {
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -57,13 +51,20 @@
   margin: auto;
 }
 
-.h2 {
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h2 {
   text-align: center;
   margin: 10px 0;
   color: #666;
 }
 
-.h3 {
+h3 {
   text-align: center;
   margin-bottom: 30px;
   color: #666;
@@ -73,22 +74,33 @@
   margin-bottom: 20px;
 }
 
-.input-label {
-  display: inline-block;
-  font-weight: bold;
-  color: #333;
+.input-group label {
+  display: block;
   margin-bottom: 8px;
-  font-size: 12px;
+  color: #333;
 }
 
-.fingerprint-display {
-  font-size: 14px;
-  color: #555;
-  margin-top: 4px;
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-.sign-in-button,
-.sign-up-button {
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.options a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.sign-in-button, .sign-up-button {
   width: 100%;
   padding: 12px;
   border: none;
@@ -124,6 +136,49 @@
 /* For larger screens */
 @media (min-width: 768px) {
   .right-section {
-    display: flex;
+    display: flex; /* Show on larger screens */
   }
+}
+
+.input-group label {
+  display: inline-block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+.inl{
+  display: inline-block;
+ 
+}
+.options label {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.options label input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.options a {
+  font-size: 12px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.options a:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }

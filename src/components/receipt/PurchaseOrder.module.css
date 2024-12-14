@@ -1,13 +1,20 @@
 /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #f7f9fc;
   color: #333;
   line-height: 1.6;
 }
 
 /* Container */
-.purchase-order-container {
+.container {
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
@@ -17,7 +24,7 @@ body {
 }
 
 /* Page Header */
-.title {
+h1 {
   font-size: 2rem;
   color: #0056b3;
   text-align: center;
@@ -25,14 +32,14 @@ body {
 }
 
 /* Form Styling */
-.purchase-order-form {
+form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 /* Form Fields */
-.form-group {
+form div {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -43,9 +50,7 @@ label {
   color: #555;
 }
 
-input,
-textarea,
-select {
+input, textarea, select {
   width: 100%;
   padding: 12px;
   font-size: 16px;
@@ -54,9 +59,7 @@ select {
   background-color: #f8f9fa;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+input:focus, textarea:focus, select:focus {
   border-color: #0056b3;
   outline: none;
   background-color: #ffffff;
@@ -85,35 +88,34 @@ button:disabled {
 }
 
 /* Table Styling */
-.items-table {
+table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.items-table th,
-.items-table td {
+th, td {
   padding: 15px;
   text-align: center;
   border: 1px solid #ddd;
 }
 
-.items-table th {
+th {
   background-color: #0056b3;
   color: #fff;
   font-size: 16px;
 }
 
-.items-table tr:nth-child(even) {
+tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.items-table tr:hover {
+tr:hover {
   background-color: #e9ecef;
 }
 
 /* Totals Section */
-.summary {
+.total-summary {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -123,7 +125,7 @@ button:disabled {
   background-color: #f8f9fa;
 }
 
-.summary p {
+.total-summary p {
   font-weight: bold;
   font-size: 18px;
   margin: 0;
@@ -136,11 +138,11 @@ textarea {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .purchase-order-container {
+  .container {
     padding: 15px;
   }
 
-  .title {
+  h1 {
     font-size: 1.8rem;
   }
 
@@ -148,8 +150,7 @@ textarea {
     font-size: 14px;
   }
 
-  .items-table th,
-  .items-table td {
+  table th, table td {
     font-size: 14px;
   }
 }

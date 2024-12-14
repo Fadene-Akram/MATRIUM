@@ -1,29 +1,20 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { OrdersContext } from "../../context/OrdersContext";
-import "./PurchaseOrder.module.css";
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { OrdersContext } from '../../context/OrdersContext';
+import './PurchaseOrder.module.css';
 
 const PurchaseOrder = () => {
   const [items, setItems] = useState([
-    {
-      item: "",
-      quantity: 1,
-      uom: "pcs",
-      price: 0,
-      tax: 0,
-      expectedArrival: "",
-    },
+    { item: '', quantity: 1, uom: 'pcs', price: 0, tax: 0, expectedArrival: '' }
   ]);
-  const [supplier, setSupplier] = useState("");
-  const [orderNumber, setOrderNumber] = useState("");
-  const [expectedArrival, setExpectedArrival] = useState("");
-  const [createdDate, setCreatedDate] = useState(
-    new Date().toISOString().split("T")[0]
-  );
-  const [shipTo, setShipTo] = useState("");
+  const [supplier, setSupplier] = useState('');
+  const [orderNumber, setOrderNumber] = useState('');
+  const [expectedArrival, setExpectedArrival] = useState('');
+  const [createdDate, setCreatedDate] = useState(new Date().toISOString().split('T')[0]);
+  const [shipTo, setShipTo] = useState('');
   const [additionalExpenses, setAdditionalExpenses] = useState(0);
-  const [additionalInfo, setAdditionalInfo] = useState("");
-  const [error, setError] = useState("");
+  const [additionalInfo, setAdditionalInfo] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
   const { orders, setOrders } = useContext(OrdersContext);
 
@@ -36,14 +27,7 @@ const PurchaseOrder = () => {
   const addItem = () => {
     setItems([
       ...items,
-      {
-        item: "",
-        quantity: 1,
-        uom: "pcs",
-        price: 0,
-        tax: 0,
-        expectedArrival: "",
-      },
+      { item: '', quantity: 1, uom: 'pcs', price: 0, tax: 0, expectedArrival: '' }
     ]);
   };
 
@@ -53,26 +37,14 @@ const PurchaseOrder = () => {
   };
 
   const totalUnits = items.reduce((sum, item) => sum + item.quantity, 0);
-  const subtotal = items.reduce(
-    (sum, item) => sum + item.quantity * item.price,
-    0
-  );
-  const totalTax = items.reduce(
-    (sum, item) => sum + (item.quantity * item.price * item.tax) / 100,
-    0
-  );
+  const subtotal = items.reduce((sum, item) => sum + item.quantity * item.price, 0);
+  const totalTax = items.reduce((sum, item) => sum + (item.quantity * item.price * item.tax) / 100, 0);
   const total = subtotal + totalTax + parseFloat(additionalExpenses);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      !supplier ||
-      !orderNumber ||
-      !expectedArrival ||
-      !shipTo ||
-      items.some((item) => !item.item)
-    ) {
-      setError("Please fill out all required fields.");
+    if (!supplier || !orderNumber || !expectedArrival || !shipTo || items.some(item => !item.item)) {
+      setError('Please fill out all required fields.');
       return;
     }
 
@@ -89,12 +61,12 @@ const PurchaseOrder = () => {
       subtotal,
       totalTax,
       totalOrderValue: total,
-      status: "open",
-      delivery: "not received",
+      status: 'open',
+      delivery: 'not received'
     };
 
     setOrders([...orders, newOrder]);
-    navigate("/");
+    navigate('/');
   };
 
   return (
@@ -103,105 +75,87 @@ const PurchaseOrder = () => {
       {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit} className="purchase-order-form">
         <div className="form-group">
-          <label className="form-label">Supplier *</label>
+          <label>Supplier *</label>
           <input
             type="text"
-            className="form-input"
             placeholder="Select or create supplier"
             value={supplier}
             onChange={(e) => setSupplier(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label className="form-label">Order Number *</label>
+          <label>Order Number *</label>
           <input
             type="text"
-            className="form-input"
             placeholder="Enter order number"
             value={orderNumber}
             onChange={(e) => setOrderNumber(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label className="form-label">Expected Arrival *</label>
+          <label>Expected Arrival *</label>
           <input
             type="date"
-            className="form-input"
             value={expectedArrival}
             onChange={(e) => setExpectedArrival(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label className="form-label">Created Date</label>
+          <label>Created Date</label>
           <input
             type="date"
-            className="form-input"
             value={createdDate}
             onChange={(e) => setCreatedDate(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label className="form-label">Ship To *</label>
+          <label>Ship To *</label>
           <input
             type="text"
-            className="form-input"
             placeholder="Enter shipping location"
             value={shipTo}
             onChange={(e) => setShipTo(e.target.value)}
           />
         </div>
         <div className="items-section">
-          <label className="section-label">Items *</label>
+          <label>Items *</label>
           <table className="items-table">
             <thead>
               <tr>
-                <th className="table-header">Item</th>
-                <th className="table-header">Quantity</th>
-                <th className="table-header">UoM</th>
-                <th className="table-header">Price (DA)</th>
-                <th className="table-header">Total (DA)</th>
-                <th className="table-header">Tax (%)</th>
-                <th className="table-header">Expected Arrival</th>
-                <th className="table-header">Action</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>UoM</th>
+                <th>Price (DA)</th>
+                <th>Total (DA)</th>
+                <th>Tax (%)</th>
+                <th>Expected Arrival</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               {items.map((item, index) => (
-                <tr key={index} className="table-row">
+                <tr key={index}>
                   <td>
                     <input
                       type="text"
-                      className="table-input"
                       placeholder="Enter item name"
                       value={item.item}
-                      onChange={(e) =>
-                        handleItemChange(index, "item", e.target.value)
-                      }
+                      onChange={(e) => handleItemChange(index, 'item', e.target.value)}
                     />
                   </td>
                   <td>
                     <input
                       type="number"
                       min="1"
-                      className="table-input"
                       value={item.quantity}
-                      onChange={(e) =>
-                        handleItemChange(
-                          index,
-                          "quantity",
-                          parseInt(e.target.value)
-                        )
-                      }
+                      onChange={(e) => handleItemChange(index, 'quantity', parseInt(e.target.value))}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      className="table-input"
                       value={item.uom}
-                      onChange={(e) =>
-                        handleItemChange(index, "uom", e.target.value)
-                      }
+                      onChange={(e) => handleItemChange(index, 'uom', e.target.value)}
                     />
                   </td>
                   <td>
@@ -209,15 +163,8 @@ const PurchaseOrder = () => {
                       type="number"
                       min="0"
                       step="0.01"
-                      className="table-input"
                       value={item.price}
-                      onChange={(e) =>
-                        handleItemChange(
-                          index,
-                          "price",
-                          parseFloat(e.target.value)
-                        )
-                      }
+                      onChange={(e) => handleItemChange(index, 'price', parseFloat(e.target.value))}
                     />
                   </td>
                   <td>{(item.quantity * item.price).toFixed(2)} DA</td>
@@ -226,29 +173,15 @@ const PurchaseOrder = () => {
                       type="number"
                       min="0"
                       step="0.01"
-                      className="table-input"
                       value={item.tax}
-                      onChange={(e) =>
-                        handleItemChange(
-                          index,
-                          "tax",
-                          parseFloat(e.target.value)
-                        )
-                      }
+                      onChange={(e) => handleItemChange(index, 'tax', parseFloat(e.target.value))}
                     />
                   </td>
                   <td>
                     <input
                       type="date"
-                      className="table-input"
                       value={item.expectedArrival}
-                      onChange={(e) =>
-                        handleItemChange(
-                          index,
-                          "expectedArrival",
-                          e.target.value
-                        )
-                      }
+                      onChange={(e) => handleItemChange(index, 'expectedArrival', e.target.value)}
                     />
                   </td>
                   <td>
@@ -264,41 +197,33 @@ const PurchaseOrder = () => {
               ))}
             </tbody>
           </table>
-          <button type="button" className="add-btn" onClick={addItem}>
-            + Add Item
-          </button>
+          <button type="button" className="add-btn" onClick={addItem}>+ Add Item</button>
         </div>
         <div className="form-group">
-          <label className="form-label">Additional Expenses</label>
+          <label>Additional Expenses</label>
           <input
             type="number"
             min="0"
             step="0.01"
-            className="form-input"
             value={additionalExpenses}
             onChange={(e) => setAdditionalExpenses(parseFloat(e.target.value))}
           />
         </div>
         <div className="summary">
-          <p className="summary-text">Total Units: {totalUnits} pcs</p>
-          <p className="summary-text">Subtotal: {subtotal.toFixed(2)} DA</p>
-          <p className="summary-text">Tax: {totalTax.toFixed(2)} DA</p>
-          <p className="summary-text">
-            <strong>Total: {total.toFixed(2)} DA</strong>
-          </p>
+          <p>Total Units: {totalUnits} pcs</p>
+          <p>Subtotal: {subtotal.toFixed(2)} DA</p>
+          <p>Tax: {totalTax.toFixed(2)} DA</p>
+          <p><strong>Total: {total.toFixed(2)} DA</strong></p>
         </div>
         <div className="form-group">
-          <label className="form-label">Additional Information</label>
+          <label>Additional Information</label>
           <textarea
-            className="form-textarea"
             value={additionalInfo}
             onChange={(e) => setAdditionalInfo(e.target.value)}
             placeholder="Add any extra information here"
           />
         </div>
-        <button type="submit" className="submit-btn">
-          Save Order
-        </button>
+        <button type="submit" className="submit-btn">Save Order</button>
       </form>
     </div>
   );

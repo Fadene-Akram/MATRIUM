@@ -81,7 +81,7 @@ input[type="file"] {
 .add-item-btn {
   padding: 10px 20px;
   border: none;
-  background: linear-gradient(to bottom right, #14add6, #384295);
+  background: linear-gradient(to bottom right, #00c8ff, #384295);
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -91,7 +91,7 @@ input[type="file"] {
 }
 
 .add-item-btn:hover {
-  background: linear-gradient(to bottom right, #14add6, #384295);
+  background: linear-gradient(to bottom right, #00c8ff, #384295);
 }
 
 /* Center and Right Columns */

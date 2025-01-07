@@ -38,16 +38,19 @@ function UpdateStock() {
         icon="src/assets/icons/stock_and_enventory_icon.svg"
       />
       <NavLink
-        to={"/"}
+        to={"/stock"}
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "start",
           padding: "20px 5%",
           textDecoration: "none",
+          color: "Black",
+          fontSize: "19px",
+          textDecorationLine: "underline",
         }}
       >
-        <span style={{ fontSize: "25px", marginRight: "10px" }}>&lt;</span> Back
+        Back
       </NavLink>
       <div className={styles["update-stock-container"]}>
         <h2 className={styles["h2"]}>Add New Item</h2>

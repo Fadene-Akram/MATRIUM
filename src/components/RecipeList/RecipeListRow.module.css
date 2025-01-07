@@ -1,0 +1,31 @@
+.rowTableContainer {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr; /* Adjusted column widths */
+  row-gap: 10px;
+  border-bottom: 2px solid rgb(227, 227, 227);
+  align-items: center;
+  /* padding: 20px 0; */
+  font-size: 12.6px;
+  color: rgb(34, 34, 34);
+  padding: 20px 0;
+  text-align: center;
+}
+.rowTableContainer:hover {
+  background-color: #edf1ff;
+}
+
+.rowTableContainer:last-child {
+  border-bottom: none;
+}
+
+.actionColumn {
+  display: flex;
+  column-gap: 1rem;
+  justify-content: end;
+  padding-right: 3rem;
+}
+
+.actionColumn div:hover {
+  scale: 1.2;
+  cursor: pointer;
+}

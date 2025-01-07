@@ -1,4 +1,6 @@
 import styles from "./PageHead.module.css";
+import notificationIcon from "../../assets/icons/notifcations_icon.svg";
+import profilePictureIcon from "../../assets/images/profile_pic.png";
 
 function PageHead({ title, description, icon }) {
   return (
@@ -11,13 +13,13 @@ function PageHead({ title, description, icon }) {
         <p className={styles.pageHeadDescription}>{description}</p>
       </div>
       <div className={styles.pageHeadNotificationProfile}>
-        <img
-          src="src/assets/icons/notifcations_icon.svg"
+        {/* <img
+          src={notificationIcon}
           alt="notification icon"
           className={styles.notificationIcon}
-        />
+        /> */}
         <img
-          src="src/assets/images/profile_pic.png"
+          src={profilePictureIcon}
           alt="profile picture"
           className={styles.profilePicture}
         />

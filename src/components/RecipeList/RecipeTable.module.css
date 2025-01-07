@@ -1,0 +1,57 @@
+.recipeListContainer {
+  width: 95%;
+  height: fit-content;
+  margin: 1rem auto 1rem auto;
+  /* padding-bottom: 1rem; */
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: gray 0.2px 0px 2px 0px;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 18px;
+  text-align: start;
+  /* margin-bottom: 0.5rem; */
+  padding: 1rem 1rem 0.5rem 1rem;
+  background-color: #edf1ff;
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+  font-weight: 400;
+  padding: 0 10px;
+  font-size: 15px;
+  column-gap: 1rem;
+  text-align: center;
+  background-color: #edf1ff;
+}
+
+.column {
+  padding: 7px;
+  white-space: nowrap;
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  /* margin: 1rem 1rem 0 0; */
+  background-color: #edf1ff;
+  padding: 1rem;
+}
+
+.paginationBtn {
+  /* background: linear-gradient(to bottom right, #14add6, #384295); */
+  background-color: #f8f9fd;
+  color: black;
+  box-shadow: gray 0.2px 0px 2px 0px;
+
+  padding: 5px;
+  border-radius: 5px;
+  margin: 4px 10px;
+  width: 3.5rem;
+  border: none;
+  cursor: pointer;
+}

@@ -8,6 +8,9 @@ import RegisterDevice from "./pages/login/RegisterDevice";
 import PurchaseOrder from "./pages/Purchase Orders List/PurchaseOrder";
 import PurchaseOrdersList from "./pages/Purchase Orders List/PurchaseOrdersList";
 import { OrdersProvider } from "../src/context/OrdersContext";
+import RecipeCreator from "./pages/RecipeList/CreateRecipe";
+import RecipeList from "./pages/RecipeList/RecipeList";
+import EditRecipe from "./pages/RecipeList/EditRecipe";
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +26,9 @@ function App() {
             <Route path="/purchase-order" element={<PurchaseOrder />} />
             <Route path="/stock" element={<StockAndInventory />} />
             <Route path="/update-stock" element={<UpdateStock />} />
+            <Route path="/add-recipe" element={<RecipeCreator />} />
+            <Route path="/recipe-list" element={<RecipeList />} />
+            <Route path="/edit-recipe/:id" element={<EditRecipe />} />
           </Route>
         </Routes>
       </OrdersProvider>

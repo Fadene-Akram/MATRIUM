@@ -109,6 +109,7 @@ const RegisterDevice = () => {
   const handleRegisterDevice = () => {
     alert("Device Registration initiated.");
     // Add your registration logic here
+    navigate("/register-device");
   };
 
   return (

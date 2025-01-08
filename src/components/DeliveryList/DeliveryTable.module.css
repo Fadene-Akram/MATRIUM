@@ -13,9 +13,8 @@
   font-size: 18px;
   text-align: start;
   /* margin-bottom: 0.5rem; */
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
   background-color: #edf1ff;
-  /* border-bottom: 1px solid rgb(197, 197, 197); */
 }
 
 .headerRow {
@@ -27,7 +26,6 @@
   column-gap: 1rem;
   text-align: center;
   background-color: #edf1ff;
-  border-bottom: 1px solid rgb(197, 197, 197);
 }
 
 .column {
@@ -42,7 +40,6 @@
   /* margin: 1rem 1rem 0 0; */
   background-color: #edf1ff;
   padding: 1rem;
-  border-top: 1px solid rgb(197, 197, 197);
 }
 
 .paginationBtn {

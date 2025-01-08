@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import styles from "./MenueBar.module.css";
-import logo from "../../assets/images/logo.png";
-import RecipeListLogo from "../../assets/icons/payroll_icon.svg";
-import PurshasedOrderLogo from "../../assets/icons/stock_and_enventory_icon.svg";
-import StockInventoryLogo from "../../assets/icons/stock_and_enventory_icon.svg";
+import logo from "../../../assets/images/logo.png";
+import RecipeListLogo from "../../../assets/icons/payroll_icon.svg";
+import StockInventoryLogo from "../../../assets/icons/stock_and_enventory_icon.svg";
+import DeliveryLogo from "../../../assets/icons/logistic_icon.svg";
 function MenueBar() {
   return (
     <div className={styles.menueBarContainer}>
@@ -44,18 +44,18 @@ function MenueBar() {
         </NavLink>
 
         <NavLink
-          to="/purchase-orders-list" // This is the route for Procurements
+          to={"/delivery-list"}
           className={({ isActive }) =>
             `${styles.menuLink} ${isActive ? styles.activeLink : ""}`
           }
         >
           <li className={styles.menueBarItem}>
             <img
-              src={PurshasedOrderLogo}
-              alt="MenueBar item 12"
+              src={DeliveryLogo}
+              alt="MenueBar item 8"
               className={styles.menueBarItemImg}
             />
-            <p>Purchase Orders List</p>
+            <p>Delivery</p>
           </li>
         </NavLink>
       </ul>

@@ -4,12 +4,11 @@
   row-gap: 10px;
   border-bottom: 2px solid rgb(227, 227, 227);
   align-items: center;
+  /* padding: 20px 0; */
   font-size: 12.6px;
   color: rgb(34, 34, 34);
   padding: 20px 0;
   text-align: center;
-  position: relative;
-  cursor: pointer;
 }
 .rowTableContainer:hover {
   background-color: #edf1ff;
@@ -24,7 +23,6 @@
   column-gap: 1rem;
   justify-content: end;
   padding-right: 3rem;
-  z-index: 50;
 }
 
 .actionColumn div:hover {

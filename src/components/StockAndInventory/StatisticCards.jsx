@@ -1,6 +1,12 @@
-import StatisticCard from "../ReusedComponent/StatisticCard";
+import StatisticCard from "../ReusedComponent/Statistic Cards/StatisticCard";
 import styles from "./StatisticCards.module.css";
 
+/**
+ * StatisticCards component renders a set of cards displaying different stock statistics.
+ * Each card shows a number, an icon, a description, and some comparison data with a positive or negative change.
+ *
+ * @returns {JSX.Element} The rendered set of statistic cards.
+ */
 function StatisticCards() {
   return (
     <div className={styles.statisticCardsContainer}>
@@ -21,7 +27,7 @@ function StatisticCards() {
         comparisonText={"2 less than last year"}
       />
       <StatisticCard
-        number={5000000}
+        number={50000}
         icon="src/assets/icons/stock_and_enventory_icon.svg"
         description="Total item cost"
         color={"purple"}
@@ -41,78 +47,3 @@ function StatisticCards() {
 }
 
 export default StatisticCards;
-
-// import { useQuery } from "@tanstack/react-query";
-// import StatisticCard from "../ReusedComponent/StatisticCard";
-// import styles from "./StatisticCards.module.css";
-
-// // Function to fetch the statistics data
-// const fetchStatistics = async () => {
-//   const response = await fetch("/api/statistics"); // Adjust the endpoint to your backend
-//   if (!response.ok) {
-//     throw new Error("Network response was not ok");
-//   }
-//   return response.json();
-// };
-
-// function StatisticCards() {
-//   const { data, isLoading, error } = useQuery(["statistics"], fetchStatistics);
-
-//   if (isLoading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   if (error) {
-//     return <div>Error fetching data</div>;
-//   }
-
-//   return (
-//     <div className={styles.statisticCardsContainer}>
-//       <StatisticCard
-//         number={data.categories}
-//         icon="src/assets/icons/stock_and_enventory_icon.svg"
-//         description="Categories"
-//         color={"blue"}
-//         positiveChangement={data.categoriesChange > 0}
-//         comparisonText={data.categoriesComparisonText} // Directly using the backend string
-//       />
-//       <StatisticCard
-//         number={data.totalItems}
-//         icon="src/assets/icons/stock_and_enventory_icon.svg"
-//         description="Total items"
-//         color={"orange"}
-//         positiveChangement={data.totalItemsChange > 0}
-//         comparisonText={data.totalItemsComparisonText} // Directly using the backend string
-//       />
-//       <StatisticCard
-//         number={data.totalItemCost}
-//         icon="src/assets/icons/stock_and_enventory_icon.svg"
-//         description="Total item cost"
-//         color={"purple"}
-//         positiveChangement={data.totalItemCostChange > 0}
-//         comparisonText={data.totalItemCostComparisonText} // Directly using the backend string
-//       />
-//       <StatisticCard
-//         number={data.itemsLowInStock}
-//         icon="src/assets/icons/stock_and_enventory_icon.svg"
-//         description="Items low in stock"
-//         color={"yellow"}
-//         positiveChangement={data.itemsLowInStockChange > 0}
-//         comparisonText={data.itemsLowInStockComparisonText} // Directly using the backend string
-//       />
-//     </div>
-//   );
-// }
-
-// export default StatisticCards;
-
-// {
-//   "categories": 15,
-//   "categoriesComparisonText": "2 more than last year",
-//   "totalItems": 800,
-//   "totalItemsComparisonText": "2 less than last year",
-//   "totalItemCost": 5000000,
-//   "totalItemCostComparisonText": "2 more than last year",
-//   "itemsLowInStock": 200,
-//   "itemsLowInStockComparisonText": "2 less than last year"
-// }

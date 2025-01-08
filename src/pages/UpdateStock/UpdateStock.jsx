@@ -1,9 +1,19 @@
 import styles from "./UpdateStock.module.css";
-import PageHead from "../../ReusedComponent/PageHead";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import PageHead from "../../components/ReusedComponent/Page Head/PageHead";
 
+/**
+ * UpdateStock is a component that provides a form to add new stock items.
+ * It allows users to upload a photo, enter product details, and submit the form.
+ *
+ * @component
+ * @example
+ * // Example usage
+ * <UpdateStock />
+ */
 function UpdateStock() {
+  // useForm hook initialization for managing form state and validation
   const {
     register,
     handleSubmit,
@@ -12,15 +22,27 @@ function UpdateStock() {
     formState: { errors },
   } = useForm();
 
+  // Watching changes in qtyPurchased and unitPrice to calculate the totalAmount dynamically
   const qtyPurchased = watch("qtyPurchased") || 0;
   const unitPrice = watch("unitPrice") || 0;
   const totalAmount = parseFloat(qtyPurchased) * parseFloat(unitPrice) || 0;
 
+  /**
+   * Handles form submission by logging the form data and showing an alert.
+   *
+   * @param {Object} data - The data from the form submission.
+   */
   const onSubmit = (data) => {
     console.log("Form Data:", data);
     alert("Item Added Successfully!");
   };
 
+  /**
+   * Handles file input changes and validates the file size.
+   * If the file is valid, it sets the file in the form data.
+   *
+   * @param {Event} e - The file input change event.
+   */
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file && file.size <= 2 * 1024 * 1024) {

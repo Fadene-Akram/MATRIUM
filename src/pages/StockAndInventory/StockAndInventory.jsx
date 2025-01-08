@@ -1,8 +1,16 @@
-import PageHead from "../../components/ReusedComponent/PageHead";
+import PageHead from "../../components/ReusedComponent/Page Head/PageHead";
 import StatisticCards from "../../components/StockAndInventory/StatisticCards";
 import StockList from "../../components/StockAndInventory/StockList";
 import UpdateStockList from "../../components/StockAndInventory/UpdateStockList";
 import styles from "./StockAndInventory.module.css";
+
+/**
+ * StockAndInventory component renders the stock management page.
+ * It includes a page header, statistics cards, stock list, and an update section.
+ * The footer contains copyright information.
+ *
+ * @returns {JSX.Element} The rendered StockAndInventory page.
+ */
 
 function StockAndInventory() {
   return (

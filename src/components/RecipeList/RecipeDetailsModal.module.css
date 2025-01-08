@@ -12,13 +12,14 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  border-radius: 15px;
 }
 
 /* Modal content */
 .modalContent {
   background-color: white;
-  padding: 20px;
-  border-radius: 8px;
+  /* padding: 20px; */
+  border-radius: 15px;
   width: 500px;
   position: relative;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -32,12 +33,23 @@
   font-size: 30px;
   cursor: pointer;
 }
+.modalTitle {
+  text-align: center;
+  border-bottom: 2px solid rgb(227, 227, 227);
+
+  padding: 20px;
+  background-color: #edf1ff;
+  border-radius: 15px 15px 0 0;
+}
 
 /* Recipe details section */
 .details {
-  padding-top: 20px;
+  /* padding: 0 0 20px 0; */
 }
-
+.detailsInformation {
+  border-bottom: 2px solid rgb(227, 227, 227);
+  padding: 0 20px 0 20px;
+}
 .details p {
   margin: 10px 0;
   font-size: 16px;
@@ -52,6 +64,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  padding: 0 20px 20px 20px;
 }
 
 .downloadBtn,
@@ -82,4 +95,16 @@
 
 .closeBtn:hover {
   background-color: #bcc0c9;
+}
+
+.ingredient {
+  /* margin-left: 1rem; */
+  padding: 0.6rem;
+  list-style: none;
+}
+
+.ingredientContainer h4 {
+  background-color: #edf1ff;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
 }

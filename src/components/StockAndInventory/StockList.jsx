@@ -2,32 +2,45 @@ import { useState, useEffect } from "react";
 import styles from "./StockList.module.css";
 import StockRow from "./StockRow";
 
+/**
+ * StockList component fetches and displays a list of products in a paginated table format.
+ * It handles loading state, error handling, and pagination logic.
+ *
+ * @returns {JSX.Element} The rendered stock list component with pagination controls.
+ */
+
 function StockList() {
-  const [stockData, setStockData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [stockData, setStockData] = useState([]); // Holds the stock data fetched from the server
+  const [isLoading, setIsLoading] = useState(true); // Represents the loading state
+  const [error, setError] = useState(null); // Holds any error encountered during data fetching
 
   // Pagination states
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1); // Current page in pagination
+  const productsPerPage = 6; // Number of products displayed per page
 
   useEffect(() => {
+    /**
+     * Fetches stock data asynchronously from a local JSON file.
+     * Sets the stock data state, loading state, and handles errors.
+     *
+     * @async
+     */
     const fetchStockData = async () => {
       try {
         const response = await import("../../data/Dummy_Product.json");
-        setStockData(response.default);
-        setIsLoading(false);
+        setStockData(response.default); // Sets stock data to state
+        setIsLoading(false); // Sets loading to false once data is fetched
       } catch (err) {
-        setError("Failed to fetch stock data");
+        setError("Failed to fetch stock data"); // Sets error if fetching fails
         setIsLoading(false);
-        console.error("Error fetching stock data:", err);
+        console.error("Error fetching stock data:", err); // Logs error in the console
       }
     };
 
-    fetchStockData();
+    fetchStockData(); // Calls fetch function when the component mounts
   }, []);
 
-  // Calculate the index of the first and last product to display
+  // Calculate the index of the first and last product to display based on the current page
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = stockData.slice(
@@ -35,23 +48,27 @@ function StockList() {
     indexOfLastProduct
   );
 
-  // Pagination: go to the previous page
+  /**
+   * Handles navigating to the previous page in the pagination.
+   */
   const handlePreviousPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
+    if (currentPage > 1) setCurrentPage(currentPage - 1); // Decreases the current page if not the first page
   };
 
-  // Pagination: go to the next page
+  /**
+   * Handles navigating to the next page in the pagination.
+   */
   const handleNextPage = () => {
     if (currentPage * productsPerPage < stockData.length)
-      setCurrentPage(currentPage + 1);
+      setCurrentPage(currentPage + 1); // Increases the current page if there are more products to show
   };
 
   if (isLoading) {
-    return <div className={styles.loadingContainer}>Loading...</div>;
+    return <div className={styles.loadingContainer}>Loading...</div>; // Shows loading message if data is being fetched
   }
 
   if (error) {
-    return <div className={styles.errorContainer}>{error}</div>;
+    return <div className={styles.errorContainer}>{error}</div>; // Displays error message if fetching fails
   }
 
   return (
@@ -68,7 +85,6 @@ function StockList() {
           <div className={styles.column}>Qty Purchased</div>
           <div className={styles.column}>Unit Price</div>
           <div className={styles.column}>Total Amount</div>
-          {/* <div className={styles.column}>In Stock</div> */}
           <div className={styles.column}>Supplier</div>
           <div className={styles.column}>Status</div>
         </div>

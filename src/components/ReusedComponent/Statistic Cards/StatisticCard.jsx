@@ -1,4 +1,17 @@
 import styles from "./StatisticCard.module.css";
+/**
+ * StatisticCard component displays a single statistic with a number, description, and comparison data.
+ *
+ * @param {Object} props - The component's props.
+ * @param {number} props.number - The numerical value to display on the card.
+ * @param {string} props.icon - The path to the icon associated with the card.
+ * @param {string} props.description - The description of the statistic.
+ * @param {string} props.color - The color used for the card.
+ * @param {boolean} props.positiveChangement - Indicates whether the change is positive.
+ * @param {string} props.comparisonText - Text showing the comparison with the previous year.
+ *
+ * @returns {JSX.Element} The rendered statistic card.
+ */
 
 function StatisticCard({
   number,

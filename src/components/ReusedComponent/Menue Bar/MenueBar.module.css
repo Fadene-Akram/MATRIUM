@@ -11,12 +11,12 @@
 .menueLogo {
   display: flex;
   justify-content: center;
-  margin: 15% auto;
+  margin: 0 auto;
   justify-self: start;
 }
 
 .menueBarImg {
-  width: 80px;
+  width: 170px;
 }
 
 .itemsContainer {

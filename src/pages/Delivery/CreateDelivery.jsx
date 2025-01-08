@@ -1,14 +1,13 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./CreateRecipe.module.css";
-import PageHead from "../../components/ReusedComponent/PageHead";
-import pageHeadIcon from "../../assets/icons/procurements_icon.svg";
+
+import pageHeadIcon from "../../assets/icons/logistic_icon.svg";
 import RecipeForm from "./RecipeForm";
 import { useRecipeForm } from "../../hooks/UseRecipeForm";
+import PageHead from "../../components/ReusedComponent/Page Head/PageHead";
 
-const EditRecipe = () => {
-  const location = useLocation();
+const DeliveryCreator = () => {
   const navigate = useNavigate();
-  const recipeToEdit = location.state?.recipe;
   const {
     stockItems,
     recipeType,
@@ -25,7 +24,7 @@ const EditRecipe = () => {
     updateIngredient,
     formatPrice,
     getTotalPrice,
-  } = useRecipeForm(recipeToEdit);
+  } = useRecipeForm();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +34,6 @@ const EditRecipe = () => {
     }
 
     const recipeData = {
-      id: recipeToEdit?.id,
       name: recipeName,
       productName,
       type: recipeType,
@@ -44,15 +42,15 @@ const EditRecipe = () => {
       totalPrice: getTotalPrice(),
     };
 
-    console.log("Updating Recipe:", recipeData);
-    navigate("/recipe-list");
+    console.log("Creating Recipe:", recipeData);
+    navigate("/Delivery-list");
   };
 
   return (
     <div className={styles.addRecipeContainer}>
       <PageHead
-        title="Edit Recipe"
-        description="Modify existing recipe"
+        title="Create a Delivery"
+        description="Create a usable Delivery"
         icon={pageHeadIcon}
       />
       <RecipeForm
@@ -76,5 +74,4 @@ const EditRecipe = () => {
     </div>
   );
 };
-
-export default EditRecipe;
+export default DeliveryCreator;

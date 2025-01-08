@@ -1,6 +1,30 @@
-// RecipeForm.js
-import styles from "./CreateRecipe.module.css";
+import styles from "../../pages/CreateEditRecipe/CreateRecipe.module.css";
 
+/**
+ * Recipe form component for creating or editing a recipe, allowing users to input recipe details, ingredients, and category.
+ *
+ * @param {Object} props - The component's props.
+ * @param {string} props.recipeType - The type of the recipe (either "fixed" or "variable").
+ * @param {Function} props.setRecipeType - Function to set the recipe type.
+ * @param {string} props.recipeName - The name of the recipe.
+ * @param {Function} props.setRecipeName - Function to set the recipe name.
+ * @param {string} props.productName - The name of the product.
+ * @param {Function} props.setProductName - Function to set the product name.
+ * @param {string} props.creationDate - The creation date of the recipe.
+ * @param {Function} props.setCreationDate - Function to set the creation date.
+ * @param {Array} props.ingredients - List of ingredients for the recipe.
+ * @param {Function} props.addIngredient - Function to add a new ingredient to the recipe.
+ * @param {Function} props.removeIngredient - Function to remove an ingredient from the recipe.
+ * @param {Function} props.updateIngredient - Function to update an ingredient's details.
+ * @param {Array} props.stockItems - List of available stock items for ingredient selection.
+ * @param {Function} props.formatPrice - Function to format the price of an ingredient or total cost.
+ * @param {Function} props.getTotalPrice - Function to calculate the total price of the recipe.
+ * @param {Function} props.onSubmit - Function to handle form submission.
+ * @param {string} props.category - The category of the recipe.
+ * @param {Function} props.setCategory - Function to set the category of the recipe.
+ *
+ * @returns {JSX.Element} The rendered RecipeForm component.
+ */
 const RecipeForm = ({
   recipeType,
   setRecipeType,
@@ -18,6 +42,8 @@ const RecipeForm = ({
   formatPrice,
   getTotalPrice,
   onSubmit,
+  category,
+  setCategory, // New prop for category state
 }) => (
   <form className={styles.addRecipeForm} onSubmit={onSubmit}>
     <div className={styles.formRow}>
@@ -56,6 +82,21 @@ const RecipeForm = ({
       </div>
     </div>
 
+    {/* Category Input Field */}
+    <div className={styles.formRow}>
+      <div className={styles.inputGroup}>
+        <label className={styles.label}>Category</label>
+        <input
+          type="text"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          placeholder="Enter category"
+          className={styles.inputdate}
+          required
+        />
+      </div>
+    </div>
+
     <div className={styles.formRow}>
       <div className={styles.inputGroup}>
         <label className={styles.label}>Date of Creation</label>
@@ -81,11 +122,7 @@ const RecipeForm = ({
           >
             <option value="">Select ingredient</option>
             {stockItems.map((item) => (
-              <option
-                key={item.productId}
-                value={item.productId}
-                disabled={item.status !== "In stock"}
-              >
+              <option key={item.productId} value={item.productId}>
                 {item.productName}
               </option>
             ))}
@@ -100,8 +137,8 @@ const RecipeForm = ({
             className={`${styles.quantityInput} ${
               recipeType === "variable" ? styles.disabled : ""
             }`}
-            disabled={recipeType === "variable"}
             required={recipeType !== "variable"}
+            min={0}
           />
           <div className={styles.unitDisplay}>
             {ingredient.unit ||

@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Office Starter Kit",
     "productName": "Stationery Essentials",
+    "category": "Office Supplies",
     "type": "fixed",
     "ingredients": [
       {
@@ -31,6 +32,7 @@
     "id": 2,
     "name": "Cleaning Essentials Pack",
     "productName": "Cleaning Supplies",
+    "category": "Cleaning Products",
     "type": "variable",
     "ingredients": [
       {
@@ -59,6 +61,7 @@
     "id": 3,
     "name": "Home Office Setup",
     "productName": "Office Supplies",
+    "category": "Office Supplies",
     "type": "fixed",
     "ingredients": [
       {
@@ -87,6 +90,7 @@
     "id": 4,
     "name": "Workplace Hygiene Kit",
     "productName": "Hygiene Supplies",
+    "category": "Hygiene Products",
     "type": "variable",
     "ingredients": [
       {
@@ -109,6 +113,7 @@
     "id": 5,
     "name": "Paperwork Toolkit",
     "productName": "Document Supplies",
+    "category": "Office Supplies",
     "type": "fixed",
     "ingredients": [
       {
@@ -131,6 +136,7 @@
     "id": 6,
     "name": "Office Starter Kit",
     "productName": "Stationery Essentials",
+    "category": "Office Supplies",
     "type": "fixed",
     "ingredients": [
       {
@@ -159,6 +165,7 @@
     "id": 7,
     "name": "Cleaning Essentials Pack",
     "productName": "Cleaning Supplies",
+    "category": "Cleaning Products",
     "type": "variable",
     "ingredients": [
       {
@@ -187,6 +194,7 @@
     "id": 8,
     "name": "Home Office Setup",
     "productName": "Office Supplies",
+    "category": "Office Supplies",
     "type": "fixed",
     "ingredients": [
       {
@@ -215,6 +223,7 @@
     "id": 9,
     "name": "Workplace Hygiene Kit",
     "productName": "Hygiene Supplies",
+    "category": "Hygiene Products",
     "type": "variable",
     "ingredients": [
       {
@@ -237,6 +246,7 @@
     "id": 10,
     "name": "Paperwork Toolkit",
     "productName": "Document Supplies",
+    "category": "Office Supplies",
     "type": "fixed",
     "ingredients": [
       {

@@ -12,18 +12,17 @@ function MenueBar() {
       </div>
       <ul className={styles.itemsContainer}>
         <NavLink
-          to={"/recipe-list"}
-          className={({ isActive }) =>
-            `${styles.menuLink} ${isActive ? styles.activeLink : ""}`
-          }
+          to="/Dashboard"
+          style={{ textDecoration: "none", color: "black", width: "100%" }}
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
         >
           <li className={styles.menueBarItem}>
             <img
-              src={RecipeListLogo}
-              alt="MenueBar item 8"
+              src="src/assets/icons/dashboard_icon.svg"
+              alt="MenueBar item 1"
               className={styles.menueBarItemImg}
             />
-            <p>Recipe List</p>
+            <p>Dashboard</p>
           </li>
         </NavLink>
 
@@ -40,6 +39,21 @@ function MenueBar() {
               className={styles.menueBarItemImg}
             />
             <p>Stocks and Inventory</p>
+          </li>
+        </NavLink>
+        <NavLink
+          to={"/recipe-list"}
+          className={({ isActive }) =>
+            `${styles.menuLink} ${isActive ? styles.activeLink : ""}`
+          }
+        >
+          <li className={styles.menueBarItem}>
+            <img
+              src={RecipeListLogo}
+              alt="MenueBar item 8"
+              className={styles.menueBarItemImg}
+            />
+            <p>Recipe List</p>
           </li>
         </NavLink>
 

@@ -2,6 +2,8 @@ import styles from "./UpdateStock.module.css";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import PageHead from "../../components/ReusedComponent/Page Head/PageHead";
+import pageHeadIcon from "../../assets/icons/stock_and_enventory_icon.svg";
+import imagephoto from "../../assets/icons/camera.png";
 
 /**
  * UpdateStock is a component that provides a form to add new stock items.
@@ -57,7 +59,7 @@ function UpdateStock() {
       <PageHead
         title="Stocks and Inventories"
         description="Update stock and inventory table"
-        icon="src/assets/icons/stock_and_enventory_icon.svg"
+        icon={pageHeadIcon}
       />
       <NavLink
         to={"/stock"}
@@ -93,10 +95,7 @@ function UpdateStock() {
                       />
                     ) : (
                       <div>
-                        <img
-                          src="src/assets/icons/camera.png"
-                          alt="Upload img"
-                        />
+                        <img src={imagephoto} alt="Upload img" />
                         <div className={styles["lightFont"]}>Upload</div>
                       </div>
                     )}

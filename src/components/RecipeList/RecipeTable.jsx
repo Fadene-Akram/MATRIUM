@@ -93,7 +93,7 @@ function RecipeTable() {
     event.stopPropagation();
     const recipe = recipeListData.find((recipe) => recipe.id === id);
     if (recipe) {
-      navigate(`/edit-recipe/${id}`, { state: { recipe } });
+      navigate(`/recipe-list/edit-recipe/${id}`, { state: { recipe } });
     } else {
       console.error("Recipe not found");
     }
@@ -116,7 +116,7 @@ function RecipeTable() {
   function toUseRecipe(id) {
     const recipe = recipeListData.find((recipe) => recipe.id === id);
     if (recipe) {
-      navigate(`/use-recipe/${id}`, { state: { recipe } });
+      navigate(`/recipe-list/use-recipe/${id}`, { state: { recipe } });
     } else {
       console.error("Recipe not found");
     }

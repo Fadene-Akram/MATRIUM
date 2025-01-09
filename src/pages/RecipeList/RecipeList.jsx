@@ -23,7 +23,7 @@ const RecipesList = () => {
    * @function handleNavigate
    */
   const handleNavigate = () => {
-    navigate("/add-recipe"); // Navigate to the "Add Recipe" route
+    navigate("/recipe-list/add-recipe"); // Navigate to the "Add Recipe" route
   };
 
   return (

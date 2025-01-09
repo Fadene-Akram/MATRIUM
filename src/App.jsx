@@ -13,7 +13,7 @@ import UseRecipe from "./pages/UtilizeRecipe/UseRecipe";
 import UpdateStock from "./pages/UpdateStock/UpdateStock";
 import DeliveryCreator from "./pages/Delivery/CreateDelivery";
 import DeliveryList from "./pages/Delivery/DeliveryList";
-import EditDelivery from "./pages/Delivery/EditDelivery";
+import Dashboard from "./pages/Dashboard/Dashboard";
 function App() {
   return (
     <BrowserRouter>
@@ -23,14 +23,22 @@ function App() {
           <Route path="/register-device" element={<RegisterDevice />} />
           <Route element={<AppLayout />}>
             <Route path="/stock" element={<StockAndInventory />} />
-            <Route path="/update-stock" element={<UpdateStock />} />
+            <Route path="/stock/update-stock" element={<UpdateStock />} />
+
             <Route path="/recipe-list" element={<RecipeList />} />
-            <Route path="/add-recipe" element={<RecipeCreator />} />
-            <Route path="/edit-recipe/:id" element={<EditRecipe />} />
-            <Route path="/use-recipe/:id" element={<UseRecipe />} />
-            <Route path="/add-delivery" element={<DeliveryCreator />} />
+            <Route path="/recipe-list/add-recipe" element={<RecipeCreator />} />
+            <Route
+              path="/recipe-list/edit-recipe/:id"
+              element={<EditRecipe />}
+            />
+            <Route path="/recipe-list/use-recipe/:id" element={<UseRecipe />} />
+
             <Route path="/delivery-list" element={<DeliveryList />} />
-            <Route path="/edit-delivery/:id" element={<EditDelivery />} />
+            <Route
+              path="/delivery-list/add-delivery"
+              element={<DeliveryCreator />}
+            />
+            <Route path="/Dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
       </OrdersProvider>

@@ -8,7 +8,7 @@ const DeliveryList = () => {
   const navigate = useNavigate(); // Initialize navigation
 
   const handleNavigate = () => {
-    navigate("/add-delivery"); // Navigate to UpdateStock route
+    navigate("/delivery-list/add-delivery"); // Navigate to UpdateStock route
   };
   return (
     <div className={styles.recipeListContainer}>

@@ -15,7 +15,7 @@ function UpdateStockList() {
    * @function
    */
   const handleNavigate = () => {
-    navigate("/update-stock"); // Navigate to UpdateStock route
+    navigate("/stock/update-stock"); // Navigate to UpdateStock route
   };
 
   return (

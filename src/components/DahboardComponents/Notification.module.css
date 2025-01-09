@@ -1,0 +1,39 @@
+.notificationContainer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.notificationContainer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.notificationContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notificationContainer li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.notificationContainer li.warning {
+  background-color: #f57c00;
+}
+
+.notificationContainer li.info {
+  background-color: #0288d1;
+}
+
+.notificationContainer li.success {
+  background-color: #43a047;
+}

@@ -24,7 +24,7 @@ function StockAndInventory() {
       <UpdateStockList />
       <StockList />
       <footer className={styles.footer}>
-        CopyRight 2024 MATRIUM. All rights reserved
+        CopyRight 2025 MATRIUM. All rights reserved
       </footer>
     </div>
   );

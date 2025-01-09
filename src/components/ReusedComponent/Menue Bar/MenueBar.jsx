@@ -13,8 +13,9 @@ function MenueBar() {
       <ul className={styles.itemsContainer}>
         <NavLink
           to="/Dashboard"
-          style={{ textDecoration: "none", color: "black", width: "100%" }}
-          className={({ isActive }) => (isActive ? "activeLink" : "")}
+          className={({ isActive }) =>
+            `${styles.menuLink} ${isActive ? styles.activeLink : ""}`
+          }
         >
           <li className={styles.menueBarItem}>
             <img

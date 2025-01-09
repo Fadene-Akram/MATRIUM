@@ -24,6 +24,9 @@ const DeliveryList = () => {
       </div>
 
       <DeliveryTable />
+      <footer className={styles.footer} style={{ textAlign: "center" }}>
+        CopyRight 2025 MATRIUM. All rights reserved
+      </footer>
     </div>
   );
 };

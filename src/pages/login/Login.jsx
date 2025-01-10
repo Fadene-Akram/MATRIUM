@@ -1,6 +1,8 @@
+// login.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import generateFingerprint from "../../utils/fingerprint";
 
 // Styled-components
 const Container = styled.div`
@@ -71,45 +73,31 @@ const StatusMessage = styled.p`
 `;
 
 const RegisterDevice = () => {
-  const [adminPassword, setAdminPassword] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
+  const [deviceFingerprint, setDeviceFingerprint] = useState("");
   const navigate = useNavigate();
-
-  const MY_DEVICE_FINGERPRINT =
-    "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMS4wLjAuMCBTYWZhcmkvNTM3LjM2fGVufDE1MzZ8ODY0fC02MA==";
-
-  const generateFingerprint = () => {
-    const properties = [
-      navigator.userAgent,
-      navigator.language,
-      window.screen.width,
-      window.screen.height,
-      new Date().getTimezoneOffset(),
-    ];
-    return btoa(properties.join("|"));
-  };
 
   const handleAdminLogin = () => {
     const fingerprint = generateFingerprint();
 
-    if (fingerprint === MY_DEVICE_FINGERPRINT) {
+    if (fingerprint === deviceFingerprint) {
       setIsAdminLoggedIn(true);
       setStatusMessage("Welcome! Privileged login successful.");
-      setTimeout(() => navigate("/Dashboard"), 2000); // Redirect to /stock
-    } else if (adminPassword === "admin123") {
-      setIsAdminLoggedIn(true);
-      setStatusMessage("Welcome Admin!");
-      setTimeout(() => navigate("/Dashboard"), 2000); // Redirect to /stock
+      setTimeout(() => navigate("/Dashboard"), 2000);
     } else {
-      setStatusMessage("Invalid admin password.");
+      setStatusMessage("Invalid admin access.");
     }
   };
 
   const handleRegisterDevice = () => {
-    alert("Device Registration initiated.");
-    // Add your registration logic here
-    navigate("/register-device");
+    const newFingerprint = generateFingerprint();
+    setDeviceFingerprint(newFingerprint);
+    setStatusMessage("Device registered successfully!");
+
+    setTimeout(() => {
+      setStatusMessage("");
+    }, 5000); // Clear notification after 5 seconds
   };
 
   return (

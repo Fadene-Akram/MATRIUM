@@ -1,0 +1,188 @@
+/* RecipeDetailsModal.module.css */
+
+/* Container for the entire delivery section */
+
+.deliveryContainer {
+  width: 100%; /* Make it fill the available width */
+  max-width: 800px; /* Set a maximum width for larger screens */
+  margin: 10px auto; /* Center the container with spacing */
+  margin-bottom: 0px;
+  padding: 10px;
+  padding-bottom: 0px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+ /*  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  height: auto; /* Allow content to determine the height */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+
+}
+
+/* Style for section headers (Customer Information and Products) */
+.deliveryContainer h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+/* Styling for paragraphs inside the container */
+.deliveryContainer p {
+  font-size: 1rem;
+  color: #555;
+  margin: 8px 0;
+}
+
+/* Bold styling for labels like Customer Name, Delivery Date */
+.deliveryContainer strong {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for the product list */
+.deliveryContainer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+/* Individual product item styling */
+.deliveryContainer li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Product name styling */
+.deliveryContainer h3 {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Additional styling for product details like price and type */
+.deliveryContainer li p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Styling for the "No products available" message */
+.deliveryContainer p.noProducts {
+  font-style: italic;
+  color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal container */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modalContent {
+  background-color: #f4f4f9;
+  padding: 5px;
+  border-radius: 8px;
+  width: 500px;
+  position: relative;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
+  height: 95vh;
+
+  /* Hide scrollbar for Webkit browsers */
+  scrollbar-width: none; /* Firefox */
+}
+
+.modalContent::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+
+/* Close button in the top-right corner */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Recipe details section */
+.details {
+  padding-top: 20px;
+}
+
+.details p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.details strong {
+  font-weight: bold;
+}
+
+/* Actions buttons (Download, Go Back) */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.downloadBtn,
+.closeBtn {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 40%;
+}
+
+.downloadBtn {
+  background: linear-gradient(to bottom right, #00c8ff, #384295);
+  color: white;
+  border: none;
+  border-radius: 5px;
+   margin-bottom: 10px; 
+}
+
+.downloadBtn:hover {
+  background: linear-gradient(to bottom right, #0091b9, #4550b5);
+}
+
+.closeBtn {
+  background-color: #dee0e4;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px; 
+}
+
+.closeBtn:hover {
+  background-color: #bcc0c9;
+}

@@ -1,0 +1,49 @@
+{
+  "notifications": [
+    { "id": 1, "message": "Low stock warning for Item A", "type": "warning" },
+    { "id": 2, "message": "New order placed by Client X", "type": "info" },
+    { "id": 3, "message": "Stock updated for Item B", "type": "success" }
+  ],
+  "finances": {
+    "labels": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "revenue": [
+      12000, 15000, 14000, 17000, 18000, 22000, 19000, 23000, 23000, 26000,
+      24000, 28000
+    ],
+    "expenses": [
+      8000, 9000, 12500, 14000, 15000, 14500, 18000, 13000, 16000, 17000, 13500,
+      12500
+    ]
+  },
+  "stockUpdates": {
+    "labels": [
+      "Item A",
+      "Item B",
+      "Item C",
+      "Item D",
+      "Item E",
+      "Item F",
+      "Item G",
+      "Item H",
+      "Item I",
+      "Item J",
+      "Item K",
+      "Item L",
+      "Item M"
+    ],
+    "stockLevels": [50, 75, 60, 80, 95, 70, 85, 90, 65, 75, 55, 70, 80]
+  }
+}

@@ -1,0 +1,268 @@
+[
+  {
+    "id": 1,
+    "name": "Office Starter Kit",
+    "productName": "Stationery Essentials",
+    "category": "Office Supplies",
+    "type": "fixed",
+    "ingredients": [
+      {
+        "name": "Ballpoint Pen",
+        "quantity": 10,
+        "unit": "pcs",
+        "price": 1500
+      },
+      {
+        "name": "A4 Printer Paper",
+        "quantity": 5,
+        "unit": "reams",
+        "price": 22500
+      },
+      {
+        "name": "Sticky Notes",
+        "quantity": 10,
+        "unit": "packs",
+        "price": 3000
+      }
+    ],
+    "totalPrice": 27000,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 2,
+    "name": "Cleaning Essentials Pack",
+    "productName": "Cleaning Supplies",
+    "category": "Cleaning Products",
+    "type": "variable",
+    "ingredients": [
+      {
+        "name": "Liquid Hand Wash",
+        "quantity": 5,
+        "unit": "bottles",
+        "price": 3750
+      },
+      {
+        "name": "Multipurpose Cleaner",
+        "quantity": 3,
+        "unit": "bottles",
+        "price": 3600
+      },
+      {
+        "name": "Disinfectant Spray",
+        "quantity": 2,
+        "unit": "cans",
+        "price": 3000
+      }
+    ],
+    "totalPrice": 10350,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 3,
+    "name": "Home Office Setup",
+    "productName": "Office Supplies",
+    "category": "Office Supplies",
+    "type": "fixed",
+    "ingredients": [
+      {
+        "name": "Ballpoint Pen",
+        "quantity": 20,
+        "unit": "pcs",
+        "price": 3000
+      },
+      {
+        "name": "Sticky Notes",
+        "quantity": 5,
+        "unit": "packs",
+        "price": 1500
+      },
+      {
+        "name": "A4 Printer Paper",
+        "quantity": 3,
+        "unit": "reams",
+        "price": 13500
+      }
+    ],
+    "totalPrice": 18000,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 4,
+    "name": "Workplace Hygiene Kit",
+    "productName": "Hygiene Supplies",
+    "category": "Hygiene Products",
+    "type": "variable",
+    "ingredients": [
+      {
+        "name": "Liquid Hand Wash",
+        "quantity": 10,
+        "unit": "bottles",
+        "price": 7500
+      },
+      {
+        "name": "Disinfectant Spray",
+        "quantity": 5,
+        "unit": "cans",
+        "price": 7500
+      }
+    ],
+    "totalPrice": 15000,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 5,
+    "name": "Paperwork Toolkit",
+    "productName": "Document Supplies",
+    "category": "Office Supplies",
+    "type": "fixed",
+    "ingredients": [
+      {
+        "name": "A4 Printer Paper",
+        "quantity": 10,
+        "unit": "reams",
+        "price": 45000
+      },
+      {
+        "name": "Ballpoint Pen",
+        "quantity": 50,
+        "unit": "pcs",
+        "price": 7500
+      }
+    ],
+    "totalPrice": 52500,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 6,
+    "name": "Office Starter Kit",
+    "productName": "Stationery Essentials",
+    "category": "Office Supplies",
+    "type": "fixed",
+    "ingredients": [
+      {
+        "name": "Ballpoint Pen",
+        "quantity": 10,
+        "unit": "pcs",
+        "price": 1500
+      },
+      {
+        "name": "A4 Printer Paper",
+        "quantity": 5,
+        "unit": "reams",
+        "price": 22500
+      },
+      {
+        "name": "Sticky Notes",
+        "quantity": 10,
+        "unit": "packs",
+        "price": 3000
+      }
+    ],
+    "totalPrice": 27000,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 7,
+    "name": "Cleaning Essentials Pack",
+    "productName": "Cleaning Supplies",
+    "category": "Cleaning Products",
+    "type": "variable",
+    "ingredients": [
+      {
+        "name": "Liquid Hand Wash",
+        "quantity": 5,
+        "unit": "bottles",
+        "price": 3750
+      },
+      {
+        "name": "Multipurpose Cleaner",
+        "quantity": 3,
+        "unit": "bottles",
+        "price": 3600
+      },
+      {
+        "name": "Disinfectant Spray",
+        "quantity": 2,
+        "unit": "cans",
+        "price": 3000
+      }
+    ],
+    "totalPrice": 10350,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 8,
+    "name": "Home Office Setup",
+    "productName": "Office Supplies",
+    "category": "Office Supplies",
+    "type": "fixed",
+    "ingredients": [
+      {
+        "name": "Ballpoint Pen",
+        "quantity": 20,
+        "unit": "pcs",
+        "price": 3000
+      },
+      {
+        "name": "Sticky Notes",
+        "quantity": 5,
+        "unit": "packs",
+        "price": 1500
+      },
+      {
+        "name": "A4 Printer Paper",
+        "quantity": 3,
+        "unit": "reams",
+        "price": 13500
+      }
+    ],
+    "totalPrice": 18000,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 9,
+    "name": "Workplace Hygiene Kit",
+    "productName": "Hygiene Supplies",
+    "category": "Hygiene Products",
+    "type": "variable",
+    "ingredients": [
+      {
+        "name": "Liquid Hand Wash",
+        "quantity": 10,
+        "unit": "bottles",
+        "price": 7500
+      },
+      {
+        "name": "Disinfectant Spray",
+        "quantity": 5,
+        "unit": "cans",
+        "price": 7500
+      }
+    ],
+    "totalPrice": 15000,
+    "dateCreated": "2025-01-07"
+  },
+  {
+    "id": 10,
+    "name": "Paperwork Toolkit",
+    "productName": "Document Supplies",
+    "category": "Office Supplies",
+    "type": "fixed",
+    "ingredients": [
+      {
+        "name": "A4 Printer Paper",
+        "quantity": 10,
+        "unit": "reams",
+        "price": 45000
+      },
+      {
+        "name": "Ballpoint Pen",
+        "quantity": 50,
+        "unit": "pcs",
+        "price": 7500
+      }
+    ],
+    "totalPrice": 52500,
+    "dateCreated": "2025-01-07"
+  }
+]

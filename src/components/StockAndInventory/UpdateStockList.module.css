@@ -23,9 +23,9 @@
   border: none;
   box-shadow: gray 0.2px 0px 2px 0px;
   margin-right: 5%;
-  background: linear-gradient(to bottom right, #14add6, #384295);
+  background: linear-gradient(to bottom right, #00c8ff, #384295);
 
-  color: rgb(219, 219, 219);
+  color: white;
   font-size: 16px;
   cursor: pointer;
 }

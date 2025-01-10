@@ -96,11 +96,11 @@ const RegisterDevice = () => {
     if (fingerprint === MY_DEVICE_FINGERPRINT) {
       setIsAdminLoggedIn(true);
       setStatusMessage("Welcome! Privileged login successful.");
-      setTimeout(() => navigate("/stock"), 2000); // Redirect to /stock
+      setTimeout(() => navigate("/Dashboard"), 2000); // Redirect to /stock
     } else if (adminPassword === "admin123") {
       setIsAdminLoggedIn(true);
       setStatusMessage("Welcome Admin!");
-      setTimeout(() => navigate("/stock"), 2000); // Redirect to /stock
+      setTimeout(() => navigate("/Dashboard"), 2000); // Redirect to /stock
     } else {
       setStatusMessage("Invalid admin password.");
     }
@@ -109,6 +109,7 @@ const RegisterDevice = () => {
   const handleRegisterDevice = () => {
     alert("Device Registration initiated.");
     // Add your registration logic here
+    navigate("/register-device");
   };
 
   return (

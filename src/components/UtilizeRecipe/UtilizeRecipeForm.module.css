@@ -1,0 +1,59 @@
+.productForm {
+  width: 95%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.formRow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.inputGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.input {
+  width: 95%;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+}
+
+.productInfo {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+.productInfo input {
+  width: 90%;
+}
+.label {
+  margin-bottom: 0.5rem;
+  width: 95%;
+}
+.saveButton {
+  width: 95%;
+  padding: 0.5rem;
+  margin-top: 3%;
+  background: linear-gradient(to bottom right, #00c8ff, #384295);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  align-self: flex-start;
+}

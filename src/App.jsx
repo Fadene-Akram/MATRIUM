@@ -2,27 +2,43 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import StockAndInventory from "./pages/StockAndInventory/StockAndInventory";
 import AppLayout from "./components/ReusedComponent/AppLayout";
-import UpdateStock from "./components/StockAndInventory/UpdateStock/UpdateStock";
 import Login from "./pages/login/Login";
 import RegisterDevice from "./pages/login/RegisterDevice";
-import PurchaseOrder from "./pages/Purchase Orders List/PurchaseOrder";
-import PurchaseOrdersList from "./pages/Purchase Orders List/PurchaseOrdersList";
+
 import { OrdersProvider } from "../src/context/OrdersContext";
+import RecipeCreator from "./pages/CreateEditRecipe/CreateRecipe";
+import RecipeList from "./pages/RecipeList/RecipeList";
+import EditRecipe from "./pages/CreateEditRecipe/EditRecipe";
+import UseRecipe from "./pages/UtilizeRecipe/UseRecipe";
+import UpdateStock from "./pages/UpdateStock/UpdateStock";
+import DeliveryCreator from "./pages/Delivery/CreateDelivery";
+import DeliveryList from "./pages/Delivery/DeliveryList";
+import Dashboard from "./pages/Dashboard/Dashboard";
 function App() {
   return (
     <BrowserRouter>
       <OrdersProvider>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route
-            path="/purchase-orders-list"
-            element={<PurchaseOrdersList />}
-          />
+          <Route path="/register-device" element={<RegisterDevice />} />
           <Route element={<AppLayout />}>
-            <Route path="/register-device" element={<RegisterDevice />} />
-            <Route path="/purchase-order" element={<PurchaseOrder />} />
             <Route path="/stock" element={<StockAndInventory />} />
-            <Route path="/update-stock" element={<UpdateStock />} />
+            <Route path="/stock/update-stock" element={<UpdateStock />} />
+
+            <Route path="/recipe-list" element={<RecipeList />} />
+            <Route path="/recipe-list/add-recipe" element={<RecipeCreator />} />
+            <Route
+              path="/recipe-list/edit-recipe/:id"
+              element={<EditRecipe />}
+            />
+            <Route path="/recipe-list/use-recipe/:id" element={<UseRecipe />} />
+
+            <Route path="/delivery-list" element={<DeliveryList />} />
+            <Route
+              path="/delivery-list/add-delivery"
+              element={<DeliveryCreator />}
+            />
+            <Route path="/Dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
       </OrdersProvider>

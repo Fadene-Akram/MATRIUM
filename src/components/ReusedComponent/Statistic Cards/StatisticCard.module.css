@@ -27,6 +27,7 @@
 }
 .numberDescription p {
   font-size: 17px;
+  width: 100%;
 }
 .iconContainer {
   background-color: rgb(218, 177, 255);
@@ -41,6 +42,7 @@
 .lowerPart {
   font-size: small;
   padding: 1rem;
+  text-align: center;
 }
 
 .blue {

@@ -4,6 +4,7 @@ import logo from "../../../assets/images/logo.png";
 import RecipeListLogo from "../../../assets/icons/payroll_icon.svg";
 import StockInventoryLogo from "../../../assets/icons/stock_and_enventory_icon.svg";
 import DeliveryLogo from "../../../assets/icons/logistic_icon.svg";
+import DashboardLogo from "../../../assets/icons/dashboard_icon.svg";
 function MenueBar() {
   return (
     <div className={styles.menueBarContainer}>
@@ -19,7 +20,7 @@ function MenueBar() {
         >
           <li className={styles.menueBarItem}>
             <img
-              src="src/assets/icons/dashboard_icon.svg"
+              src={DashboardLogo}
               alt="MenueBar item 1"
               className={styles.menueBarItemImg}
             />

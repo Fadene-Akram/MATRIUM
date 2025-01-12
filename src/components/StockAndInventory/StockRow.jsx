@@ -1,5 +1,5 @@
 import styles from "./StockRow.module.css";
-
+import defaultPhoto from "../../assets/images/product_6.png";
 /**
  * StockRow component renders a row in the stock list table, displaying
  * details of a single product, including its image, name, price, and status.
@@ -20,7 +20,7 @@ import styles from "./StockRow.module.css";
  */
 function StockRow({ rowInformation }) {
   const {
-    sn,
+    id,
     image,
     productName,
     productId,
@@ -37,9 +37,13 @@ function StockRow({ rowInformation }) {
 
   return (
     <div className={styles.rowTableContainer}>
-      <div className={styles.column}>{sn}</div>
+      <div className={styles.column}>{id}</div>
       <div className={styles.column}>
-        <img src={image} alt={productName} className={styles.image} />
+        <img
+          src={image || defaultPhoto}
+          alt={`${productName}-img`}
+          className={styles.image}
+        />
       </div>
       <div className={styles.column}>{productName}</div>
       <div className={styles.column}>{productId}</div>

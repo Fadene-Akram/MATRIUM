@@ -142,8 +142,6 @@
 //   };
 // };
 
-import { useState, useEffect } from "react";
-
 /**
  * Custom hook to manage recipe form state, including stock items, recipe details, ingredients, and calculations.
  *
@@ -176,8 +174,11 @@ import { useState, useEffect } from "react";
  * @returns {Function} formatPrice - Function to format the price as a currency string.
  * @returns {Function} getTotalPrice - Function to calculate the total price of the recipe ingredients.
  */
+import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProducts } from "../api/Api";
+
 export const useRecipeForm = (initialRecipe) => {
-  const [stockItems, setStockItems] = useState([]);
   const [recipeType, setRecipeType] = useState(initialRecipe?.type || "fixed");
   const [recipeName, setRecipeName] = useState(initialRecipe?.name || "");
   const [productName, setProductName] = useState(
@@ -186,29 +187,21 @@ export const useRecipeForm = (initialRecipe) => {
   const [creationDate, setCreationDate] = useState(
     initialRecipe?.dateCreated || ""
   );
-  const [category, setCategory] = useState(initialRecipe?.category || ""); // Add category state
+  const [category, setCategory] = useState(initialRecipe?.category || "");
 
-  // Load stock items first
-  useEffect(() => {
-    const fetchStockData = async () => {
-      try {
-        const response = await import("../data/Dummy_Product.json");
-        setStockItems(response.default);
-      } catch (error) {
-        console.error("Error loading stock data:", error);
-      }
-    };
-    fetchStockData();
-  }, []);
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["products"],
+    queryFn: fetchProducts,
+  });
 
-  // Initialize ingredients after stock items are loaded
+  const stockItems = data?.items || [];
+
   const [ingredients, setIngredients] = useState(() => {
     if (!initialRecipe?.ingredients) {
       return [{ stockId: "", quantity: "", unit: "", price: 0 }];
     }
 
     return initialRecipe.ingredients.map((ingredient) => {
-      // Find matching stock item by name
       const matchingStock = stockItems.find(
         (stock) => stock.productName === ingredient.name
       );
@@ -222,7 +215,6 @@ export const useRecipeForm = (initialRecipe) => {
     });
   });
 
-  // Update ingredients when stock items are loaded
   useEffect(() => {
     if (stockItems.length > 0 && initialRecipe?.ingredients) {
       setIngredients(
@@ -298,6 +290,14 @@ export const useRecipeForm = (initialRecipe) => {
     );
   };
 
+  if (isLoading) {
+    return { loading: true, stockItems: [] };
+  }
+
+  if (isError) {
+    return { error: error.message, stockItems: [] };
+  }
+
   return {
     stockItems,
     recipeType,
@@ -308,8 +308,8 @@ export const useRecipeForm = (initialRecipe) => {
     setProductName,
     creationDate,
     setCreationDate,
-    category, // Return the category state
-    setCategory, // Return setCategory
+    category,
+    setCategory,
     ingredients,
     setIngredients,
     addIngredient,

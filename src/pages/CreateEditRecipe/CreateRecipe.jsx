@@ -4,6 +4,7 @@ import PageHead from "../../components/ReusedComponent/Page Head/PageHead";
 import pageHeadIcon from "../../assets/icons/procurements_icon.svg";
 import RecipeForm from "../../components/CreateEditRecipe/RecipeForm";
 import { useRecipeForm } from "../../hooks/UseRecipeForm";
+import { addRecipe } from "../../api/Api";
 
 /**
  * CreateRecipe component for creating a new recipe.
@@ -16,7 +17,9 @@ import { useRecipeForm } from "../../hooks/UseRecipeForm";
 const CreateRecipe = () => {
   const navigate = useNavigate();
   const {
-    stockItems,
+    loading,
+    error,
+    stockItems = [],
     recipeType,
     setRecipeType,
     recipeName,
@@ -26,7 +29,8 @@ const CreateRecipe = () => {
     creationDate,
     setCreationDate,
     ingredients,
-    Category, // Category for the recipe
+    category,
+    setCategory,
     addIngredient,
     removeIngredient,
     updateIngredient,
@@ -40,7 +44,20 @@ const CreateRecipe = () => {
    *
    * @param {Object} e - The event object
    */
-  const handleSubmit = (e) => {
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+  // Add safety check before rendering
+  if (!Array.isArray(stockItems)) {
+    return <div>Loading stock items...</div>;
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!creationDate) {
       alert("Please select a date of creation.");
@@ -51,13 +68,23 @@ const CreateRecipe = () => {
       name: recipeName,
       productName,
       type: recipeType,
-      date: creationDate,
+      dateCreated: creationDate,
       ingredients,
-      totalPrice: getTotalPrice(),
+      // totalPrice: getTotalPrice(),
+      // category: category,
     };
 
-    console.log("Creating Recipe:", recipeData);
-    navigate("/recipe-list");
+    try {
+      console.log("Recipe data:", recipeData);
+      await addRecipe(recipeData);
+      // Show success message
+      alert("Recipe added successfully!");
+      // Navigate to recipe list
+      navigate("/recipe-list");
+    } catch (error) {
+      // Show error message
+      alert(error.message);
+    }
   };
 
   return (
@@ -84,7 +111,8 @@ const CreateRecipe = () => {
         formatPrice={formatPrice}
         getTotalPrice={getTotalPrice}
         onSubmit={handleSubmit}
-        setCategory={Category} // Pass Category to RecipeForm
+        category={category}
+        setCategory={setCategory}
       />
     </div>
   );

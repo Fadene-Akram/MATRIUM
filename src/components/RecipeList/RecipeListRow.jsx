@@ -32,14 +32,14 @@ function RecipeListRow({
   onUseRecipe,
   onEditAction,
 }) {
-  const { id, name, productName, type, totalPrice, dateCreated } =
+  const { id, name, product_name, type, totalPrice, dateCreated } =
     rowInformation;
 
   return (
     <div className={styles.rowTableContainer} onClick={onUseRecipe}>
       <div className={styles.idColumn}>{id}</div>
       <div className={styles.column}>{name}</div>
-      <div className={styles.column}>{productName}</div>
+      <div className={styles.column}>{product_name}</div>
       <div className={styles.column}>{type}</div>
       <div className={styles.column}>{dateCreated}</div>
       <div className={styles.column}>{totalPrice}</div>

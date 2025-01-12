@@ -5,7 +5,6 @@ import AppLayout from "./components/ReusedComponent/AppLayout";
 import Login from "./pages/login/Login";
 import RegisterDevice from "./pages/login/RegisterDevice";
 
-import { OrdersProvider } from "../src/context/OrdersContext";
 import RecipeCreator from "./pages/CreateEditRecipe/CreateRecipe";
 import RecipeList from "./pages/RecipeList/RecipeList";
 import EditRecipe from "./pages/CreateEditRecipe/EditRecipe";
@@ -14,10 +13,14 @@ import UpdateStock from "./pages/UpdateStock/UpdateStock";
 import DeliveryCreator from "./pages/Delivery/CreateDelivery";
 import DeliveryList from "./pages/Delivery/DeliveryList";
 import Dashboard from "./pages/Dashboard/Dashboard";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <BrowserRouter>
-      <OrdersProvider>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register-device" element={<RegisterDevice />} />
@@ -41,8 +44,8 @@ function App() {
             <Route path="/Dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
-      </OrdersProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

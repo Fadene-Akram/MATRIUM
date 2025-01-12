@@ -4,8 +4,6 @@ import DeliveryDetailsModal from "./DeliveryDetailsModal"; // Import the modal c
 import styles from "./DeliveryTable.module.css";
 import { useNavigate } from "react-router-dom";
 
-
-
 function DeliveryTable() {
   const [DeliveryListData, setDeliveryListData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -36,14 +34,14 @@ function DeliveryTable() {
     fetchStockData();
   }, []);
 
-  function deleteRecipe(id,event) {
+  function deleteRecipe(id, event) {
     event.stopPropagation();
     setDeliveryListData((prevData) =>
       prevData.filter((recipe) => recipe.orderId !== id)
     );
   }
 
-  function viewDetailsDelivery(id,event) {
+  function viewDetailsDelivery(id, event) {
     event.stopPropagation();
     const recipe = DeliveryListData.find((recipe) => recipe.orderId === id);
     if (recipe) {
@@ -54,8 +52,7 @@ function DeliveryTable() {
     }
   }
 
-
-/*   function viewDetailsDeliveryPage(id) {
+  /*   function viewDetailsDeliveryPage(id) {
     const recipe = DeliveryListData.find((recipe) => recipe.orderId === id);
   
     if (recipe) {
@@ -65,8 +62,6 @@ function DeliveryTable() {
       console.error("Delivery not found");
     }
   } */
-  
-
 
   // Close the modal
   function closeModal() {
@@ -119,9 +114,9 @@ function DeliveryTable() {
         {currentProducts.map((recipe, index) => (
           <DeliveryListRow
             rowInformation={recipe}
-            onDeleteAction={(e) => deleteRecipe(recipe.orderId,e)}
-            onViewDetailsAction={(e) => viewDetailsDelivery(recipe.orderId,e)}
-           /*  onViewDeliveryAction={() => viewDetailsDeliveryPage(recipe.orderId)} */
+            onDeleteAction={(e) => deleteRecipe(recipe.orderId, e)}
+            onViewDetailsAction={(e) => viewDetailsDelivery(recipe.orderId, e)}
+            /*  onViewDeliveryAction={() => viewDetailsDeliveryPage(recipe.orderId)} */
             key={index}
           />
         ))}
@@ -155,4 +150,3 @@ function DeliveryTable() {
 }
 
 export default DeliveryTable;
-

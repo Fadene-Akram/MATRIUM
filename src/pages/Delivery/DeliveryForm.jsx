@@ -177,7 +177,7 @@ const RecipeForm = ({
       creation.setDate(creation.getDate() + 3);
     } else if (recipeType === "Standard") {
       creation.setDate(creation.getDate() + 7);
-    }else{
+    } else {
       creation.setDate(creation.getDate() + 7);
     }
     return creation.toISOString().split("T")[0]; // Format as YYYY-MM-DD
@@ -252,7 +252,9 @@ const RecipeForm = ({
           <div key={index} className={styles.ingredientRow}>
             <select
               value={ingredient.stockId}
-              onChange={(e) => updateIngredient(index, "stockId", e.target.value)}
+              onChange={(e) =>
+                updateIngredient(index, "stockId", e.target.value)
+              }
               className={styles.select}
               required
             >

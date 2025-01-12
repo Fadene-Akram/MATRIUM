@@ -38,7 +38,7 @@ const RecipeForm = ({
   addIngredient,
   removeIngredient,
   updateIngredient,
-  stockItems,
+  stockItems = [],
   formatPrice,
   getTotalPrice,
   onSubmit,
@@ -83,7 +83,7 @@ const RecipeForm = ({
     </div>
 
     {/* Category Input Field */}
-    <div className={styles.formRow}>
+    {/* <div className={styles.formRow}>
       <div className={styles.inputGroup}>
         <label className={styles.label}>Category</label>
         <input
@@ -95,7 +95,7 @@ const RecipeForm = ({
           required
         />
       </div>
-    </div>
+    </div> */}
 
     <div className={styles.formRow}>
       <div className={styles.inputGroup}>
@@ -112,7 +112,7 @@ const RecipeForm = ({
 
     <div>
       <label className={styles.label}>Ingredients</label>
-      {ingredients.map((ingredient, index) => (
+      {ingredients?.map((ingredient, index) => (
         <div key={index} className={styles.ingredientRow}>
           <select
             value={ingredient.stockId}
@@ -121,11 +121,12 @@ const RecipeForm = ({
             required
           >
             <option value="">Select ingredient</option>
-            {stockItems.map((item) => (
-              <option key={item.productId} value={item.productId}>
-                {item.productName}
-              </option>
-            ))}
+            {Array.isArray(stockItems) &&
+              stockItems.map((item) => (
+                <option key={item.productId} value={item.productId}>
+                  {item.productName}
+                </option>
+              ))}
           </select>
           <input
             type="number"
@@ -171,9 +172,9 @@ const RecipeForm = ({
       >
         + Add Ingredient
       </button>
-      <div className={styles.totalCost}>
+      {/* <div className={styles.totalCost}>
         Total Cost: {formatPrice(getTotalPrice())}
-      </div>
+      </div> */}
     </div>
 
     <div className={styles.buttonGroup}>

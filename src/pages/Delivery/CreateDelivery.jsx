@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./CreateRecipe.module.css";
 
 import pageHeadIcon from "../../assets/icons/logistic_icon.svg";
-import RecipeForm from "./RecipeForm";
+import RecipeForm from "./DeliveryForm";
 import { useRecipeForm } from "../../hooks/UseRecipeForm";
 import PageHead from "../../components/ReusedComponent/Page Head/PageHead";
 

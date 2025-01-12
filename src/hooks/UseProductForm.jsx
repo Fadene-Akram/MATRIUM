@@ -72,8 +72,8 @@ const useProductForm = (recipe) => {
     setTotalAmount(qty * unitPrice);
 
     if (qty === 0) setStatus("Out of Stock");
-    else if (qty < 100) setStatus("Low in Stock");
-    else setStatus("In Stock");
+    else if (qty < 10) setStatus("Low in Stock");
+    else setStatus("Available");
   };
 
   return {

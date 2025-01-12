@@ -14,7 +14,7 @@ function Dashboard() {
         icon="src/assets/icons/dashboard_icon.svg"
       />
       <StatisticCards />
-      <Notification />
+      {/* <Notification /> */}
       <FinancesChart />
       <StockUpdatesChart />
       <footer className={styles.footer}>
